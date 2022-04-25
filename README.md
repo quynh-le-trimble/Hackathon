@@ -8,6 +8,9 @@
 
 ## Setting up your local development
 
+### Install Unity 
+ - Version 2021.3.1f1
+
 ### Visual Studio Code
 - Install the following extensions:
   -  Debugger for Unity (Unity)
