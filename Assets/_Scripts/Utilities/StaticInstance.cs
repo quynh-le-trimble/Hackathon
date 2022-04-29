@@ -6,7 +6,7 @@ namespace Hackathon
     /// A static instance is similar to a singleton, but instead of destroying any new instance, it overrides the current instance. 
     /// Useful for when Domain Reload is turned off: https://docs.unity3d.com/Manual/DomainReloading.html
     /// </summary>
-    public class StaticInstance<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class StaticInstance<T> : MonoBehaviour where T : MonoBehaviour
     {
         public static T Instance { get; private set; }
         protected virtual void Awake()
