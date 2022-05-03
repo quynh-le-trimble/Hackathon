@@ -8,6 +8,7 @@ namespace Hackathon
         [Header("Spawner Setup")]
         [Tooltip("Reward Prefab for the Spawner")]
         public GameObject rewardPrefab;
+        public GameObject linePrefab;
 
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
