@@ -11,7 +11,7 @@ namespace Hackathon
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : NetworkBehaviour
     {
-         public CharacterController characterController;
+        public CharacterController characterController;
 
         void OnValidate()
         {
@@ -72,6 +72,12 @@ namespace Hackathon
                 isFalling = true;
                 jumpSpeed = 0;
             }
+        }
+
+        [Command]
+        void CmdSomeMethodOnServer()
+        {
+
         }
 
         void FixedUpdate()

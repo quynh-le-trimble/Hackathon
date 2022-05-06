@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,7 +296,7 @@ MonoBehaviour:
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 1480027675339556, guid: c90c57620bba79747b8b6412ce228560,
+  playerPrefab: {fileID: 5233852563732672448, guid: 116c269a177b782439f1f5408b7b9a26,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
@@ -312,7 +312,8 @@ MonoBehaviour:
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
-  rewardPrefab: {fileID: 0}
+  rewardPrefab: {fileID: 1139254171913846, guid: 99f1b3d2618f1734c87215920d9367b5,
+    type: 3}
   linePrefab: {fileID: 0}
 --- !u!1 &331500245
 GameObject:
