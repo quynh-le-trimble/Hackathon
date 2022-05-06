@@ -30,7 +30,7 @@ namespace Hackathon
         private bool CanAppend(Vector3 pos)
         {
             if (_renderer.positionCount == 0) return true;
-            return Vector3.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > NetworkDrawManager.RESOLUTION;
+            return Vector3.Distance(_renderer.GetPosition(_renderer.positionCount - 1), pos) > DrawManager.RESOLUTION;
         }
     }
 }
