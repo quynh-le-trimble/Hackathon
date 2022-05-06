@@ -7,7 +7,7 @@ namespace Hackathon
 {
     public class DrawButton : MonoBehaviour
     {
-        [SerializeField] private DrawManager _drawManager;
+        [SerializeField] private NetworkDrawManager _drawManager;
         [SerializeField] private Button _button;
 
         public void OnButtonPress()

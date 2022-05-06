@@ -24,24 +24,39 @@ namespace Hackathon
 
         void Update()
         {
-           
 
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 5f;
-            Vector3 worldPosition = _cam.ScreenToWorldPoint(mousePos);
-            
-            if(_playerCursor!=null) _playerCursor.position = worldPosition;
 
-            if(Input.GetMouseButtonDown(0))
-            {
-               
-                _currentLine = Instantiate(_networkLine, worldPosition, Quaternion.identity);
-                _currentLine.SetColor(_lineColor);
-                _currentLine.SetWidth(_lineWidth);
-                NetworkServer.Spawn(_currentLine.gameObject);
-            } 
+            // Vector3 mousePos = Input.mousePosition;
+            // mousePos.z = 5f;
+            // Vector3 worldPosition = _cam.ScreenToWorldPoint(mousePos);
 
-            if(Input.GetMouseButton(0)) _currentLine.SetPosition(worldPosition);
+            // if(_playerCursor!=null) _playerCursor.position = worldPosition;
+
+            // if (Input.GetMouseButtonDown(0))
+            // {
+
+            // _currentLine = Instantiate(_networkLine, worldPosition, Quaternion.identity);
+            // _currentLine.SetColor(_lineColor);
+            // _currentLine.SetWidth(_lineWidth);
+            // NetworkServer.Spawn(_currentLine.gameObject);
+            //     DrawLine(worldPosition);
+            // }
+
+            //if (Input.GetMouseButton(0)) DrawDot(worldPosition);
+        }
+
+        public void DrawLine(Vector3 position)
+        {
+            _currentLine = Instantiate(_networkLine, position, Quaternion.identity);
+            _currentLine.SetColor(_lineColor);
+            _currentLine.SetWidth(_lineWidth);
+            NetworkServer.Spawn(_currentLine.gameObject);
+        }
+
+        public void DrawDot(Vector3 position)
+        {
+            _currentLine.SetPosition(position);
+            NetworkServer.Spawn(_currentLine.gameObject);
         }
     }
 }

@@ -257,7 +257,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0
+  near clip plane: -40
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
@@ -606,7 +606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 2991056557667675028, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: m_Color.a
@@ -621,7 +621,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 3646035365572386181, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: _button
@@ -631,7 +631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 4151483870872914475, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: _button
@@ -641,7 +641,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 5590073984493216981, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: _button
@@ -651,7 +651,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 6540063539061367554, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: _button
@@ -661,7 +661,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 7337771645944268422, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: _button
@@ -671,7 +671,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     - target: {fileID: 7362800860806543727, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: m_Color.a
@@ -686,7 +686,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _drawManager
       value: 
-      objectReference: {fileID: 1105915170}
+      objectReference: {fileID: 6279480810230447499}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c8f481d45bb3ba4187f03f5e112ef74, type: 3}
 --- !u!114 &940847891 stripped
@@ -783,18 +783,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 510c10f635db42849b2171af51032161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1105915168 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6279480809132921002, guid: 796f9ee2c70806f4d8993704e85d6707,
-    type: 3}
-  m_PrefabInstance: {fileID: 6279480810230447498}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e757c4e8fcc464b9cb7c67726044b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1563188487
@@ -964,7 +952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795315204}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 2.91, y: 3, z: 1.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -998,6 +986,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 276397062828019574, guid: 796f9ee2c70806f4d8993704e85d6707,
+        type: 3}
+      propertyPath: sceneId
+      value: 3032360616
+      objectReference: {fileID: 0}
     - target: {fileID: 6279480809132920981, guid: 796f9ee2c70806f4d8993704e85d6707,
         type: 3}
       propertyPath: m_Name
@@ -1006,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 6279480809132921002, guid: 796f9ee2c70806f4d8993704e85d6707,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6279480809132921003, guid: 796f9ee2c70806f4d8993704e85d6707,
         type: 3}
@@ -1065,3 +1058,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796f9ee2c70806f4d8993704e85d6707, type: 3}
+--- !u!114 &6279480810230447499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6279480809132921002, guid: 796f9ee2c70806f4d8993704e85d6707,
+    type: 3}
+  m_PrefabInstance: {fileID: 6279480810230447498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e757c4e8fcc464b9cb7c67726044b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

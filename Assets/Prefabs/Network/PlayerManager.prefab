@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  m_ZOffset: 15
+  m_ZOffset: 100
 --- !u!114 &5233852563732672449
 MonoBehaviour:
   m_ObjectHideFlags: 0
