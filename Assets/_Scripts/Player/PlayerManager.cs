@@ -52,7 +52,6 @@ namespace Hackathon
             NetworkDrawManager.Instance.DrawLine(cursorPoint);
         }
 
-        [Command]
         private void CmdDrawDot(Vector3 cursorPoint)
         {
             NetworkDrawManager.Instance.DrawDot(cursorPoint);
