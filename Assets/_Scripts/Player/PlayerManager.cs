@@ -43,7 +43,7 @@ namespace Hackathon
             }
 
             // // On Mouse click
-             if (Input.GetMouseButton(0)) CmdDrawDot(cursorPoint);
+            if (Input.GetMouseButton(0)) CmdDrawDot(cursorPoint);
         }
 
         [Command]
@@ -52,6 +52,7 @@ namespace Hackathon
             NetworkDrawManager.Instance.DrawLine(cursorPoint);
         }
 
+        [Command]
         private void CmdDrawDot(Vector3 cursorPoint)
         {
             NetworkDrawManager.Instance.DrawDot(cursorPoint);

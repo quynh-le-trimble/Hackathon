@@ -8,14 +8,14 @@ namespace Hackathon
     public class NetworkDrawManager : Singleton<NetworkDrawManager>
     {
         private Camera _cam;
-        [SerializeField] private NetworkLine _networkLine;
+        [SerializeField] private NetworkLine _networkLinePrefab;
         [SerializeField] private Transform _playerCursor;
 
 
         public const float RESOLUTION = 0.1f;
         public float _lineWidth = 0.2f;
         public Color _lineColor;
-        private Line _currentLine;
+        private NetworkLine _currentLine;
 
         void Start()
         {
@@ -47,14 +47,18 @@ namespace Hackathon
 
         public void DrawLine(Vector3 position)
         {
-            _currentLine = Instantiate(_networkLine, position, Quaternion.identity);
+            _currentLine = Instantiate(_networkLinePrefab, position, Quaternion.identity);
             _currentLine.SetColor(_lineColor);
             _currentLine.SetWidth(_lineWidth);
+            _currentLine.SetPosition(position);
+            Debug.Log(_currentLine._renderer.positionCount);
             NetworkServer.Spawn(_currentLine.gameObject);
         }
 
         public void DrawDot(Vector3 position)
         {
+            _currentLine.SetColor(_lineColor);
+            _currentLine.SetWidth(_lineWidth);
             _currentLine.SetPosition(position);
             NetworkServer.Spawn(_currentLine.gameObject);
         }

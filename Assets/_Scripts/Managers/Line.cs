@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 namespace Hackathon
 {
-    public class Line : MonoBehaviour
+    public class Line : NetworkBehaviour
     {
-        [SerializeField] private LineRenderer _renderer;
+     
+        [SerializeField] public LineRenderer _renderer;
+
+        [SyncVar]
+        Color m_color;
+
+        
 
         public void SetColor(Color color)
         {
             _renderer.material.color = color;
+            m_color = color;
         }
 
         public void SetWidth(float width)
