@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System;
 
 namespace Hackathon
 {
-    public class NetworkDrawManager : Singleton<NetworkDrawManager>
+    public class NetworkDrawManager : NetworkSingleton<NetworkDrawManager>
     {
+        public RectTransform m_ParentCanvas;
+        public RectTransform m_debugTransform;
+
         private Camera _cam;
         [SerializeField] private NetworkLine _networkLinePrefab;
+        [SerializeField] private GameObject m_brushPrefab;
         [SerializeField] private Transform _playerCursor;
 
 
@@ -47,12 +52,27 @@ namespace Hackathon
 
         public void DrawLine(Vector3 position)
         {
-            _currentLine = Instantiate(_networkLinePrefab, position, Quaternion.identity);
-            _currentLine.SetColor(_lineColor);
-            _currentLine.SetWidth(_lineWidth);
-            _currentLine.SetPosition(position);
-            Debug.Log(_currentLine._renderer.positionCount);
-            NetworkServer.Spawn(_currentLine.gameObject);
+            Vector2 anchorPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(m_ParentCanvas, new Vector2(position.x, position.y), _cam, out anchorPoint);
+
+            var brushPrefab = Instantiate(m_brushPrefab, position, Quaternion.identity, m_ParentCanvas);
+            var rect = brushPrefab.GetComponent<RectTransform>();
+            rect.anchoredPosition = anchorPoint;
+            // _currentLine.SetColor(_lineColor);
+            // _currentLine.SetWidth(_lineWidth);
+            // _currentLine.SetPosition(position);
+            // Debug.Log(_currentLine._renderer.positionCount);
+            //NetworkServer.Spawn(brushPrefab);
+
+            RpcDrawLine(position, anchorPoint);
+        }
+
+        [ClientRpc]
+        private void RpcDrawLine(Vector3 position, Vector2 anchorPoint)
+        {
+            var brushPrefab = Instantiate(m_brushPrefab, position, Quaternion.identity, m_ParentCanvas);
+            var rect = brushPrefab.GetComponent<RectTransform>();
+            rect.anchoredPosition = anchorPoint;
         }
 
         public void DrawDot(Vector3 position)

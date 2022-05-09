@@ -5,11 +5,6 @@ namespace Hackathon
 {
     public class NetworkManagerTribbio : NetworkRoomManager
     {
-        [Header("Spawner Setup")]
-        [Tooltip("Reward Prefab for the Spawner")]
-        public GameObject rewardPrefab;
-        public GameObject linePrefab;
-
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
         /// </summary>
@@ -18,7 +13,7 @@ namespace Hackathon
         {
             // spawn the initial batch of Rewards
             //if (sceneName == GameplayScene)
-                Spawner.InitialSpawn();
+            // Spawner.InitialSpawn();
         }
 
         /// <summary>

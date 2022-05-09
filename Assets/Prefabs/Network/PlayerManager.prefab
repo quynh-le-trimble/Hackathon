@@ -162,7 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  m_ZOffset: 100
 --- !u!114 &5233852563732672449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +179,10 @@ MonoBehaviour:
   clientAuthority: 1
   sendInterval: 0.05
   syncPosition: 1
-  syncRotation: 1
+  syncRotation: 0
   syncScale: 0
   interpolatePosition: 1
-  interpolateRotation: 1
+  interpolateRotation: 0
   interpolateScale: 0
   bufferTimeMultiplier: 1
   bufferSizeLimit: 64

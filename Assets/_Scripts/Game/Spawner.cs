@@ -18,7 +18,7 @@ namespace Hackathon
             if (!NetworkServer.active) return;
 
             Vector3 spawnPosition = new Vector3(Random.Range(-19, 20), 1, Random.Range(-19, 20));
-            NetworkServer.Spawn(Object.Instantiate(((NetworkManagerTribbio)NetworkManager.singleton).rewardPrefab, spawnPosition, Quaternion.identity));
+            //NetworkServer.Spawn(Object.Instantiate(((NetworkManagerTribbio)NetworkManager.singleton).rewardPrefab, spawnPosition, Quaternion.identity));
         }
     }
 }

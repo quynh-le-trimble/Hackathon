@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e757c4e8fcc464b9cb7c67726044b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _networkLine: {fileID: 7669148370715825077, guid: 44d262ff6a62efa42ae073fd96c9750d,
-    type: 3}
+  _networkLinePrefab: {fileID: 0}
   _playerCursor: {fileID: 0}
   _lineWidth: 5
   _lineColor: {r: 0, g: 0, b: 0, a: 0}
@@ -63,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  serverOnly: 1
+  serverOnly: 0
   visible: 0
   m_AssetId: 796f9ee2c70806f4d8993704e85d6707
   hasSpawned: 0
