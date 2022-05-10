@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3769420849710656623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5233852563732672472}
@@ -162,6 +162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  _networkLine: {fileID: 7669148370715825077, guid: 44d262ff6a62efa42ae073fd96c9750d,
+    type: 3}
+  _lineWidth: 1
+  _lineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &5233852563732672449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncMode: 0
-  syncInterval: 0.1
+  syncInterval: 0
   clientAuthority: 1
   sendInterval: 0.05
   syncPosition: 1

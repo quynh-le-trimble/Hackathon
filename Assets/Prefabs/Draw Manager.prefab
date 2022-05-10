@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6279480809132921003
 Transform:
   m_ObjectHideFlags: 0
@@ -45,7 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e757c4e8fcc464b9cb7c67726044b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _networkLinePrefab: {fileID: 0}
+  syncMode: 0
+  syncInterval: 0.1
+  m_ParentCanvas: {fileID: 0}
+  m_debugTransform: {fileID: 0}
+  _networkLinePrefab: {fileID: 7669148370715825077, guid: 44d262ff6a62efa42ae073fd96c9750d,
+    type: 3}
+  m_brushPrefab: {fileID: 6738257550611600425, guid: 9891d9aa51a7f73408fb8c2aaced9e69,
+    type: 3}
   _playerCursor: {fileID: 0}
   _lineWidth: 5
   _lineColor: {r: 0, g: 0, b: 0, a: 0}

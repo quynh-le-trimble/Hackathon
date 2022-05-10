@@ -25,6 +25,8 @@ namespace Hackathon
         void Start()
         {
             _cam = Camera.main;
+
+            Application.targetFrameRate = 60;
         }
 
         void Update()
@@ -54,17 +56,10 @@ namespace Hackathon
         {
             Vector2 anchorPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(m_ParentCanvas, new Vector2(position.x, position.y), _cam, out anchorPoint);
+            
 
             var brushPrefab = Instantiate(m_brushPrefab, position, Quaternion.identity, m_ParentCanvas);
-            var rect = brushPrefab.GetComponent<RectTransform>();
-            rect.anchoredPosition = anchorPoint;
-            // _currentLine.SetColor(_lineColor);
-            // _currentLine.SetWidth(_lineWidth);
-            // _currentLine.SetPosition(position);
-            // Debug.Log(_currentLine._renderer.positionCount);
-            //NetworkServer.Spawn(brushPrefab);
-
-            RpcDrawLine(position, anchorPoint);
+            brushPrefab.GetComponent<RectTransform>().anchoredPosition = anchorPoint;
         }
 
         [ClientRpc]
