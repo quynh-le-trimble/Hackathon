@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Hackathon
 {
     public class AudioManager : PersistentSingleton<AudioManager>
     {
-        [SerializeField] private AudioSource _musicSource, _effectsSource;
+        [SerializeField]
+        private AudioSource m_musicSource, _effectsSource;
 
         public void PlaySound(AudioClip clip)
         {
@@ -25,7 +24,7 @@ namespace Hackathon
 
         public void ToggleMusic()
         {
-            _musicSource.mute = !_musicSource.mute;
+            m_musicSource.mute = !m_musicSource.mute;
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Mirror;
 
 namespace Hackathon
 {
@@ -20,11 +21,34 @@ namespace Hackathon
         }
     }
 
+    public abstract class NetworkStaticInstance<T> : NetworkBehaviour where T : NetworkBehaviour
+    {
+        public static T Instance { get; private set; }
+        protected virtual void Awake()
+        {
+            Instance = this as T;
+        }
+        protected virtual void OnApplicationQuit()
+        {
+            Instance = null;
+            Destroy(gameObject);
+        }
+    }
+
     /// <summary>
     /// A basic singleton class. Similar to a static instance but will destroy any new versions created
     /// leaving the original.
     /// </summary>
     public abstract class Singleton<T> : StaticInstance<T> where T : MonoBehaviour
+    {
+        protected override void Awake()
+        {
+            if (Instance != null) Destroy(gameObject);
+            base.Awake();
+        }
+    }
+
+    public abstract class NetworkSingleton<T> : NetworkStaticInstance<T> where T : NetworkBehaviour
     {
         protected override void Awake()
         {
