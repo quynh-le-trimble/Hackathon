@@ -263,6 +263,21 @@ PrefabInstance:
       propertyPath: sceneId
       value: 1453629459
       objectReference: {fileID: 0}
+    - target: {fileID: 124711068643692294, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 2044652887
+      objectReference: {fileID: 0}
+    - target: {fileID: 437288873716287168, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 2525526565
+      objectReference: {fileID: 0}
+    - target: {fileID: 986850370638746186, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 2448132195
+      objectReference: {fileID: 0}
     - target: {fileID: 1251810387013904852, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: m_Camera
@@ -383,7 +398,16 @@ PrefabInstance:
       propertyPath: sceneId
       value: 594227202
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5655956872585660819, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+=======
+    - target: {fileID: 2727986288747462033, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 3813983730
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123585440767192698, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+>>>>>>> 8716468... Beginning of Word Manager
         type: 3}
       propertyPath: sceneId
       value: 2910825833
@@ -398,13 +422,251 @@ PrefabInstance:
       propertyPath: sceneId
       value: 2696618871
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 7179274715702044731, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
         type: 3}
       propertyPath: sceneId
       value: 3337404805
+=======
+    - target: {fileID: 4757177120405007096, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 940847899}
+    - target: {fileID: 4757177120405007096, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757177120405007098, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChooseWordButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757177120405007099, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757177120405007099, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757177120405007099, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183970584297265114, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 773554933
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590073984493216981, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: _drawManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655956872585660819, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 2932974170
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118131073007549729, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 3180325791
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540063539061367554, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: _drawManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837873791733343004, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 940847897}
+    - target: {fileID: 6837873791733343004, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837873791733343006, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChooseWordButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837873791733343007, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837873791733343007, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 323
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837873791733343007, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973849435884230428, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 895937856
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179274715702044731, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 3252954078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307221409100654461, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 649673579
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337771645944268422, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: _drawManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431694922309211963, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: sceneId
+      value: 631609018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403300096297018296, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: _drawManager
+      value: 
+>>>>>>> 8716468... Beginning of Word Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553727141544296477, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 940847898}
+    - target: {fileID: 8553727141544296477, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553727141544296478, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553727141544296478, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553727141544296479, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+        type: 3}
+      propertyPath: m_TagString
+      value: ChooseWordButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c8f481d45bb3ba4187f03f5e112ef74, type: 3}
+--- !u!1 &940847891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6837873791733343006, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &940847892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6837873791733343004, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &940847893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8553727141544296479, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &940847894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8553727141544296477, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &940847895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4757177120405007098, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &940847896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4757177120405007096, guid: 1c8f481d45bb3ba4187f03f5e112ef74,
+    type: 3}
+  m_PrefabInstance: {fileID: 940847890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &940847897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d37a1421903074fa3821bba4b073bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputText: {fileID: 0}
+  _inputButton: {fileID: 940847892}
+--- !u!114 &940847898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d37a1421903074fa3821bba4b073bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputText: {fileID: 0}
+  _inputButton: {fileID: 940847894}
+--- !u!114 &940847899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940847895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d37a1421903074fa3821bba4b073bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputText: {fileID: 0}
+  _inputButton: {fileID: 940847896}
 --- !u!1 &1563188487
 GameObject:
   m_ObjectHideFlags: 0

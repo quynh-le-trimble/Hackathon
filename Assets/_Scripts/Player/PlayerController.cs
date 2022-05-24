@@ -14,7 +14,11 @@ namespace Hackathon
         [SyncVar]
         public Color _lineColor = Color.white;
         [SyncVar]
+<<<<<<< HEAD
         public string _playerName;
+=======
+        public string _currentWord = "";
+>>>>>>> ac45002... Beginning of Word Manager
 
         private Camera m_cam;
         private RectTransform m_Background;
@@ -45,6 +49,11 @@ namespace Hackathon
             {
                 CmdAddToLine(pos);
             }
+
+            if (_currentWord != "")
+            {
+                Debug.Log("Current Word is: " + _currentWord);
+            }
         }
 
         [Command]
@@ -74,6 +83,12 @@ namespace Hackathon
         public void CmdUpdateWidth(float width)
         {
             _lineWidth = width;
+        }
+
+        [Command]
+        public void CmdUpdateCurrentWord(string word)
+        {
+            _currentWord = word;
         }
 
         private Vector3 GetCursorPosition()
