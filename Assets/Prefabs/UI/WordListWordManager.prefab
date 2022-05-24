@@ -261,10 +261,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputText: {fileID: 8121154102185411055}
+<<<<<<< HEAD
   _inputButton_1: {fileID: 0}
   _inputButton_2: {fileID: 0}
   _inputButton_3: {fileID: 0}
   buttons: []
+=======
+  _inputButton: {fileID: 8121154101020391796}
+>>>>>>> 87164682ec11ec19ad2752ab5a87231c545c29c8
 --- !u!1 &8121154101970268309
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,11 +604,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8121154101633914741}
+<<<<<<< HEAD
     - target: {fileID: 8476801320089971713, guid: 7cebffe6edac3df42ba2a53429123c5b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetWordList
       objectReference: {fileID: 0}
+=======
+>>>>>>> 87164682ec11ec19ad2752ab5a87231c545c29c8
     - target: {fileID: 8476801320089971714, guid: 7cebffe6edac3df42ba2a53429123c5b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -713,7 +720,11 @@ PrefabInstance:
     - target: {fileID: 8476801320089971715, guid: 7cebffe6edac3df42ba2a53429123c5b,
         type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD
       value: SetWordListButton
+=======
+      value: Button
+>>>>>>> 87164682ec11ec19ad2752ab5a87231c545c29c8
       objectReference: {fileID: 0}
     - target: {fileID: 8476801320089971715, guid: 7cebffe6edac3df42ba2a53429123c5b,
         type: 3}
@@ -722,6 +733,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cebffe6edac3df42ba2a53429123c5b, type: 3}
+<<<<<<< HEAD
+=======
+--- !u!114 &8121154101020391796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8476801320089971713, guid: 7cebffe6edac3df42ba2a53429123c5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 366910620613776757}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> 87164682ec11ec19ad2752ab5a87231c545c29c8
 --- !u!224 &8121154101020391799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8476801320089971714, guid: 7cebffe6edac3df42ba2a53429123c5b,
