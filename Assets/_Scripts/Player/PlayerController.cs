@@ -14,7 +14,10 @@ namespace Hackathon
         [SyncVar]
         public Color _lineColor = Color.white;
         [SyncVar]
+<<<<<<< HEAD
         public string _playerName;
+=======
+>>>>>>> 8716468... Beginning of Word Manager
         public string _currentWord = "";
 
         private Camera m_cam;
