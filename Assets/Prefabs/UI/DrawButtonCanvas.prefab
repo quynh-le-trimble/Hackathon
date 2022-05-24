@@ -1570,8 +1570,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 1c8f481d45bb3ba4187f03f5e112ef74
   hasSpawned: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &3845481300606992135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,4 +2095,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4010251515491862265}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 8716468... Beginning of Word Manager
