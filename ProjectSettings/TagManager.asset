@@ -7,6 +7,8 @@ TagManager:
   - Size Button
   - Color Button
   - BG
+  - ChooseWordButton
+  - SetWordListButton
   layers:
   - Default
   - TransparentFX
