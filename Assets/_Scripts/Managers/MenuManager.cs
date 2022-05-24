@@ -67,7 +67,7 @@ namespace Hackathon
             }
 
             // Manual registration, prob a better way to handle this. 
-            Menu[] menuPrefabs = { m_MainMenu, m_LobbyMenu, m_ProfileMenu, m_GameMenu };
+            Menu[] menuPrefabs = { m_MainMenu, m_ProfileMenu, m_GameMenu };
 
             foreach (var menuPrefab in menuPrefabs)
             {
