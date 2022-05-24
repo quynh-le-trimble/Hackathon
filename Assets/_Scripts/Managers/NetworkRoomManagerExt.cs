@@ -5,14 +5,6 @@ namespace Hackathon
 {
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
-<<<<<<< HEAD:Assets/_Scripts/Managers/NetworkRoomManagerExt.cs
-=======
-        [Header("Spawner Setup")]
-        [Tooltip("Reward Prefab for the Spawner")]
-        public GameObject rewardPrefab;
-        public GameObject linePrefab;
-
->>>>>>> c64f320... Beginings of Draw Manager:Assets/_Scripts/Network/NetworkManagerTribbio.cs
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
         /// </summary>
