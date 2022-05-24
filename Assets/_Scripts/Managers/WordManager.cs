@@ -2,75 +2,65 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Hackathon
 {
-    public class WordManager : PersistentSingleton<WordManager>
+    public class WordManager : Singleton<WordManager>
     {
         private static class WordList
         {
             public static List<string> parsedWordList { get; set; }
             public static List<string> usedWordsList { get; set; }
         }
-
-        [SerializeField] TMP_InputField _inputText;
-        [SerializeField] Button _inputButton;
+       
         private PlayerController _playerController;
-        
+        public List<Button> buttons = new List<Button>();
 
+        [HideInInspector] public ListCreator _listCreator;
+        [HideInInspector] public WordSelector _wordSelector;
+        
         //Default list to use if no list passed in
         string DefaultWordList = "cat,dog,car,house,microprocessor,speaker,knife,computer";
 
-        void OnEnable()
+        public void SetButtonWords()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            if (scene.name == "Game")
+            foreach (Button button in _wordSelector.buttons)
             {
-                GameObject[] buttons = GameObject.FindGameObjectsWithTag("ChooseWordButton");
-                foreach (GameObject button in buttons)
-                {
-                    Debug.Log("Before: " + button.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text);
-                    GetNextRandomWord(button.GetComponent<Button>());
-                    Debug.Log("After: " + button.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text);
-                }
+                Debug.Log("Before: " + button.GetComponentInChildren<TextMeshProUGUI>().text);
+                GetNextRandomWord(button);
+                Debug.Log("After: " + button.GetComponentInChildren<TextMeshProUGUI>().text);
             }
         }
 
-        void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        public void OnButtonPress()
+        public void SetWordList()
         {
             string wordList;
-
-            if (_inputButton.tag == "SetWordListButton")
-            {
-                if (!string.IsNullOrEmpty(_inputText.text) && _inputText.text != "Enter comma seperated word list here")
-                    wordList = _inputText.text;
-                else
-                    wordList = DefaultWordList;
-                
-                WordList.parsedWordList = wordList.Split(',').ToList();
-                WordList.usedWordsList = new List<string>();
-            }
+            if (!string.IsNullOrEmpty(_listCreator._inputText.text) && _listCreator._inputText.text != "Enter comma seperated word list here")
+                    wordList = _listCreator._inputText.text;
             else
-            {
-                _playerController = (PlayerController)GameObject.FindObjectsOfType(typeof(PlayerController)).FirstOrDefault(o => ((PlayerController)o).isLocalPlayer);
+                wordList = DefaultWordList;
+            
+            WordList.parsedWordList = wordList.Split(',').ToList();
+            WordList.usedWordsList = new List<string>();
+        }
 
-                // Expose Chosen word and hide buttons
-                _playerController.CmdUpdateCurrentWord(_inputButton.GetComponentInChildren<TextMeshProUGUI>().text);
-                _inputButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
-                _inputButton.GetComponentInParent<CanvasGroup>().interactable = false;
-                _inputButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
+        public void OnWordSelect(Button button)
+        {
+            
+            Debug.Log(button.GetComponentInChildren<TextMeshProUGUI>().text);
+            _playerController = (PlayerController)GameObject.FindObjectsOfType(typeof(PlayerController)).FirstOrDefault(o => ((PlayerController)o).isLocalPlayer);
+
+            // Expose Chosen word and hide buttons
+            _playerController.CmdUpdateCurrentWord(button.GetComponentInChildren<TextMeshProUGUI>().text);
+
+            foreach (Button hideButton in _wordSelector.buttons)
+            {
+                hideButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
+                hideButton.GetComponentInParent<CanvasGroup>().interactable = false;
+                hideButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
             }
+            
         }
 
         private void GetNextRandomWord(Button button)
