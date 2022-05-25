@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 6da314fe5af5d9044922a989f4d245a6
+<<<<<<<< HEAD:Assets/MenuOpener.cs.meta
+guid: 44cbae5989368224bb11009f7bf5b0ef
+========
+guid: 3f6b1e89472d8234fa46e9b826468210
+>>>>>>>> main:Assets/_Scripts/Game/Base/GameMode.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

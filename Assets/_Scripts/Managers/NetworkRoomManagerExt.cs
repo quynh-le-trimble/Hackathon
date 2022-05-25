@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
@@ -28,6 +29,7 @@ namespace Hackathon
         {
             //PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
             //playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
+            GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
             return true;
         }
 
@@ -60,6 +62,12 @@ namespace Hackathon
 #else
             showStartButton = true;
 #endif
+        }
+
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+        {
+            base.OnServerAddPlayer(conn);
+
         }
 
         public override void OnGUI()
