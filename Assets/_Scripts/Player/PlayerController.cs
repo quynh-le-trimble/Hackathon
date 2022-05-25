@@ -13,6 +13,8 @@ namespace Hackathon
         public float _lineWidth = 1f;
         [SyncVar]
         public Color _lineColor = Color.white;
+        [SyncVar]
+        public string _playerName;
 
         private Camera m_cam;
         private RectTransform m_Background;

@@ -6,27 +6,27 @@ using UnityEngine;
 namespace Hackathon
 {
     public class TimerSystem : MonoBehaviour
-    {
-        public float m_TimeRemaining = 10;
+    {        
+        public const float DefaultTimeRemaining = 10;
+        public float m_TimeRemaining = 0;
         public Action OnTimerEnd;
 
         [SerializeField] private TextMeshProUGUI m_DisplayText;
-        bool timerIsRunning = false;
+        public bool timerIsRunning = false;
 
-        public void SetTime(float time)
+        public void SetTime()
         {
-            m_TimeRemaining = time;
+            if (m_TimeRemaining <= 0)
+            {
+                m_TimeRemaining = DefaultTimeRemaining;
+            }
+
             DisplayTime(m_TimeRemaining);
         }
 
         public void StartTimer()
         {
-            timerIsRunning = true;
-        }
-
-        public void StartTimer(float time)
-        {
-            m_TimeRemaining = time;
+            SetTime();
             timerIsRunning = true;
         }
 
@@ -40,7 +40,6 @@ namespace Hackathon
             }
             else
             {
-                m_TimeRemaining = 0;
                 OnTimerEnd?.Invoke();
                 timerIsRunning = false;
             }
