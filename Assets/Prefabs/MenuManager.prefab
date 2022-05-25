@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f36d2ec9b66bd4abeb22137efb30bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MainMenu: {fileID: 0}
-  m_LobbyMenu: {fileID: 0}
-  m_ProfileMenu: {fileID: 0}
-  m_GameMenu: {fileID: 0}
+  m_MainMenu: {fileID: 755447307319942106, guid: 24b2f1149bff41f42a9d6cfff62e1e1d,
+    type: 3}
+  m_LobbyMenu: {fileID: 5149074622539481245, guid: fc2af823bd726ae45898b47ebb64123b,
+    type: 3}
+  m_ProfileMenu: {fileID: 8284423824921074871, guid: ed2b5475bf1d43745a49364883c6e90c,
+    type: 3}
+  m_GameMenu: {fileID: 8805335287883812827, guid: 5fcc86564540af54a92cc1fbbba238f5,
+    type: 3}

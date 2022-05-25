@@ -391,10 +391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
-    - target: {fileID: 8737564522553331445, guid: de470f04815bc9543b41c5dafd17ec3d,
+    - target: {fileID: 8028307421292679271, guid: de470f04815bc9543b41c5dafd17ec3d,
         type: 3}
-      propertyPath: m_TimeRemaining
-      value: 0
+      propertyPath: sceneId
+      value: 3826730463
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de470f04815bc9543b41c5dafd17ec3d, type: 3}
@@ -446,9 +446,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _players: []
-  _pastPlayers: []
   _currentPlayer: {fileID: 0}
   _timer: {fileID: 1129476951}
+  roomManager: {fileID: 0}
 --- !u!4 &1447592110
 Transform:
   m_ObjectHideFlags: 0

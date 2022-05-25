@@ -7,8 +7,8 @@ namespace Hackathon
 {
     public class TurnManager : Singleton<TurnManager>
     {
-        [SerializeField] private List<uint> _playerIds;
-        public uint _currentPlayerId;
+        [SerializeField] private List<PlayerController> _players;
+        public PlayerController _currentPlayer;
         [SerializeField] private TimerSystem _timer;
         public NetworkRoomManager roomManager;
 
@@ -21,27 +21,28 @@ namespace Hackathon
         // Update is called once per frame
         void Update()
         {
-            if (_playerIds.Count != roomManager.numPlayers)
+            if (_players.Count != roomManager.numPlayers)
             {
-                _playerIds = roomManager.gamePlayers.Select(player => player.GetComponent<NetworkIdentity>().netId).ToList();
+                _players = roomManager.gamePlayers.Select(player => player.GetComponent<PlayerController>()).ToList();
             }
-            else if (!_timer.timerIsRunning && _playerIds.Count == roomManager.numPlayers)
+            else if (!_timer.timerIsRunning && _players.Count == roomManager.numPlayers)
             {
-                GetNextPlayer(_playerIds);
+                GetNextPlayer(_players);
                 //Do preround setup here
+                //current player is given word choices and picks word
 
-                _timer.StartTimer();
+                _timer.CmdStartTimer();
             }
         }
 
-        public void GetNextPlayer(List<uint> players)
+        public void GetNextPlayer(List<PlayerController> players)
         {
             if (players == null) return;
-            _currentPlayerId = players.First();
+            _currentPlayer = players.First();
             players.Add(players.First());
             players.Remove(players.First());
 
-            Debug.Log("Current Player: " + _currentPlayerId);
+            Debug.Log("Current Player: " + _currentPlayer._playerName);
         }
     }
 }

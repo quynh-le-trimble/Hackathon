@@ -645,30 +645,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7841984201004789136, guid: 296621da9a1d9db4f8e3d6d0319f4252,
-        type: 3}
-      propertyPath: m_GameMenu
-      value: 
-      objectReference: {fileID: 8805335287883812827, guid: 5fcc86564540af54a92cc1fbbba238f5,
-        type: 3}
-    - target: {fileID: 7841984201004789136, guid: 296621da9a1d9db4f8e3d6d0319f4252,
-        type: 3}
-      propertyPath: m_MainMenu
-      value: 
-      objectReference: {fileID: 755447307319942106, guid: 24b2f1149bff41f42a9d6cfff62e1e1d,
-        type: 3}
-    - target: {fileID: 7841984201004789136, guid: 296621da9a1d9db4f8e3d6d0319f4252,
-        type: 3}
-      propertyPath: m_LobbyMenu
-      value: 
-      objectReference: {fileID: 5149074622539481245, guid: fc2af823bd726ae45898b47ebb64123b,
-        type: 3}
-    - target: {fileID: 7841984201004789136, guid: 296621da9a1d9db4f8e3d6d0319f4252,
-        type: 3}
-      propertyPath: m_ProfileMenu
-      value: 
-      objectReference: {fileID: 8284423824921074871, guid: ed2b5475bf1d43745a49364883c6e90c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 296621da9a1d9db4f8e3d6d0319f4252, type: 3}
 --- !u!4 &7687222911017447926 stripped
