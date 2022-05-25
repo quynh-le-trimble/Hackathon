@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4437314920790399255}
   m_Layer: 0
   m_Name: PlayerController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,5 +202,5 @@ MonoBehaviour:
   syncInterval: 0.1
   m_LinePrefab: {fileID: 5388787241886112715, guid: 6e8838283feae404c9ea360f974431e0,
     type: 3}
-  _lineWidth: 1
+  _lineWidth: 3
   _lineColor: {r: 1, g: 1, b: 1, a: 1}

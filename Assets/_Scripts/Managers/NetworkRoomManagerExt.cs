@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
@@ -5,14 +6,6 @@ namespace Hackathon
 {
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
-<<<<<<< HEAD:Assets/_Scripts/Managers/NetworkRoomManagerExt.cs
-=======
-        [Header("Spawner Setup")]
-        [Tooltip("Reward Prefab for the Spawner")]
-        public GameObject rewardPrefab;
-        public GameObject linePrefab;
-
->>>>>>> c64f320... Beginings of Draw Manager:Assets/_Scripts/Network/NetworkManagerTribbio.cs
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
         /// </summary>
@@ -36,6 +29,7 @@ namespace Hackathon
         {
             //PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
             //playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
+            GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
             return true;
         }
 
@@ -68,6 +62,12 @@ namespace Hackathon
 #else
             showStartButton = true;
 #endif
+        }
+
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn)
+        {
+            base.OnServerAddPlayer(conn);
+
         }
 
         public override void OnGUI()
