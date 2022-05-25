@@ -8,7 +8,7 @@ namespace Hackathon
     {
         public override void Start(GameManager context)
         {
-            throw new System.NotImplementedException();
+           
         }
     }
 }

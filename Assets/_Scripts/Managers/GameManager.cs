@@ -13,6 +13,8 @@ namespace Hackathon
 
         [SyncVar]
         public int m_playerCount = 0;
+        [SyncVar]
+        public List<PlayerController> players = new List<PlayerController>();
 
         private NetworkRoomManagerExt m_networkManager;
         private PlayerController[] allPlayers;
@@ -24,9 +26,7 @@ namespace Hackathon
 
 
             m_networkManager = FindObjectOfType<NetworkRoomManagerExt>();
-            allPlayers = GameObject.FindObjectsOfType<PlayerController>(true);
-            m_playerCount = allPlayers.Length;
-            StartCoroutine("GameLoop");
+            //StartCoroutine("GameLoop");
         }
 
         IEnumerator GameLoop()
@@ -44,8 +44,13 @@ namespace Hackathon
                 m_notificationText.gameObject.SetActive(true);
             }
 
-            SetPlayerState(false);
+
             yield return new WaitForSeconds(5);
+
+            // allPlayers = GameObject.FindObjectsOfType<PlayerController>(true);
+            // m_playerCount = allPlayers.Length;
+
+            yield return new WaitForSeconds(1);
         }
         IEnumerator PlayGame()
         {
@@ -70,14 +75,16 @@ namespace Hackathon
 
         void SetPlayerState(bool state)
         {
-            foreach (var player in allPlayers)
-            {
-                player.enabled = state;
-            }
+            // foreach (var player in allPlayers)
+            // {
+            //     player.enabled = state;
+            // }
         }
 
-        public void SwitchModes(GameMode mode) {
+        public void SwitchModes(GameMode mode)
+        {
             m_currentGameMode = mode;
-            m_currentGameMode.Start(this);        }
+            m_currentGameMode.Start(this);
+        }
     }
 }
