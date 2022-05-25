@@ -11,17 +11,17 @@ namespace Hackathon
         [SerializeField] public TMP_InputField _inputText;
 
         // Start is called before the first frame update
-        void Initialize()
+        void Start()
         {
             _wordManager = WordManager.Instance;
             _wordManager._listCreator = this;
 
-            //LobbyMenu.Open();
+            SetWordList();
         }
 
         public void SetWordList()
         {
-            _wordManager.SetWordList();
+            _wordManager?.SetWordList();
         }
     }
 }

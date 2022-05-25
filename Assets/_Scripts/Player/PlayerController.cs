@@ -31,7 +31,11 @@ namespace Hackathon
             m_RigidBody = GetComponent<Rigidbody>();            
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
+
+             GameMenu.Open();
         }
+
+    
 
         void Update()
         {
