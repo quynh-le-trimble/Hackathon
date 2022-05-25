@@ -16,7 +16,7 @@ namespace Hackathon
         public List<Button> buttons = new List<Button>();
 
         // Start is called before the first frame update
-        void Start()
+        void Initialize()
         {
             if (WordManager.Instance != null)
             {

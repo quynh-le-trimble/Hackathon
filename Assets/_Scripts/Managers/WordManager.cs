@@ -3,25 +3,29 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using UnityEngine.SceneManagement;
 >>>>>>> 8716468... Beginning of Word Manager
+=======
+>>>>>>> e0644b1... Fixed Lobby and Game Scenes
 using UnityEngine.UI;
 
 namespace Hackathon
 {
-<<<<<<< HEAD
     public class WordManager : Singleton<WordManager>
+<<<<<<< HEAD
 =======
     public class WordManager : PersistentSingleton<WordManager>
 >>>>>>> 8716468... Beginning of Word Manager
+=======
+>>>>>>> e0644b1... Fixed Lobby and Game Scenes
     {
         private static class WordList
         {
             public static List<string> parsedWordList { get; set; }
             public static List<string> usedWordsList { get; set; }
         }
-<<<<<<< HEAD
        
         private PlayerController _playerController;
         public List<Button> buttons = new List<Button>();
@@ -70,6 +74,7 @@ namespace Hackathon
                 hideButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
             }
             
+<<<<<<< HEAD
 =======
 
         [SerializeField] TMP_InputField _inputText;
@@ -129,6 +134,8 @@ namespace Hackathon
                 _inputButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
             }
 >>>>>>> 8716468... Beginning of Word Manager
+=======
+>>>>>>> e0644b1... Fixed Lobby and Game Scenes
         }
 
         private void GetNextRandomWord(Button button)

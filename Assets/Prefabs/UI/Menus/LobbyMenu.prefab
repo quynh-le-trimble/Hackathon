@@ -231,11 +231,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ListCreator
       objectReference: {fileID: 0}
-    - target: {fileID: 4595303910219397249, guid: 054cdbb7b48b8b647979875049f74aef,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6572574509010060652, guid: 054cdbb7b48b8b647979875049f74aef,
         type: 3}
       propertyPath: m_AssetId
