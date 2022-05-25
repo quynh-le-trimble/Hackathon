@@ -16,7 +16,7 @@ namespace Hackathon
         public List<Button> buttons = new List<Button>();
 
         // Start is called before the first frame update
-        void Initialize()
+        void Start()
         {
             if (WordManager.Instance != null)
             {
@@ -31,7 +31,7 @@ namespace Hackathon
 
         public void OnWordSelect(Button button)
         {
-            _wordManager.OnWordSelect(button);
+            _wordManager?.OnWordSelect(button);
         }
     }
 }
