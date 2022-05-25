@@ -11,7 +11,7 @@ namespace Hackathon
         [SerializeField] public TMP_InputField _inputText;
 
         // Start is called before the first frame update
-        void Start()
+        void Initialize()
         {
             _wordManager = WordManager.Instance;
             _wordManager._listCreator = this;
