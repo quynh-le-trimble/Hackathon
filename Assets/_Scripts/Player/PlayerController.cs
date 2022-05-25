@@ -62,6 +62,18 @@ namespace Hackathon
 
         }
 
+        [Command]
+        public void CmdUpdateColor(Color color)
+        {
+            _lineColor = color;
+        }
+
+        [Command]
+        public void CmdUpdateWidth(float width)
+        {
+            _lineWidth = width;
+        }
+
         private Vector3 GetCursorPosition()
         {
             Vector3 mousePos = Input.mousePosition;
