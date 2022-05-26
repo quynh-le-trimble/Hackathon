@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Hackathon
 {
-    public class WordManager : Singleton<WordManager>
+    public class WordManager : PersistentSingleton<WordManager>
     {
         private static class WordList
         {
@@ -47,8 +47,6 @@ namespace Hackathon
 
         public void OnWordSelect(Button button)
         {
-            
-            Debug.Log(button.GetComponentInChildren<TextMeshProUGUI>().text);
             _playerController = (PlayerController)GameObject.FindObjectsOfType(typeof(PlayerController)).FirstOrDefault(o => ((PlayerController)o).isLocalPlayer);
 
             // Expose Chosen word and hide buttons

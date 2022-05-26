@@ -16,6 +16,7 @@ namespace Hackathon
         [SyncVar]
         public string _playerName;
         public string _currentWord = "";
+        
 
         private Camera m_cam;
         private RectTransform m_Background;
@@ -28,11 +29,7 @@ namespace Hackathon
             m_RigidBody = GetComponent<Rigidbody>();            
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
-
-             GameMenu.Open();
         }
-
-    
 
         void Update()
         {

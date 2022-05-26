@@ -2,14 +2,12 @@
 using System;
 using TMPro;
 using UnityEngine;
-using Mirror;
 
 namespace Hackathon
 {
-    public class TimerSystem : NetworkBehaviour
+    public class TimerSystem : MonoBehaviour
     {        
         public const float DefaultTimeRemaining = 10;
-        [SyncVar]
         public float m_TimeRemaining = 0;
         public Action OnTimerEnd;
 
@@ -33,8 +31,7 @@ namespace Hackathon
             DisplayTime(m_TimeRemaining);
         }
 
-        [Command]
-        public void CmdStartTimer()
+        public void StartTimer()
         {
             SetTime();
             timerIsRunning = true;

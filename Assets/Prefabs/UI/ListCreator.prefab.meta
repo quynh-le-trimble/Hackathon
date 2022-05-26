@@ -1,16 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD:Assets/Prefabs/UI/ListCreator.prefab.meta
 guid: 72e0556dc9efd7c44974a462f457b31e
-=======
-guid: 912ecfba8ca68a54f9ebd1e244598d18
-folderAsset: yes
->>>>>>> c5ce654e14e2d25773b4cbd8a7b62ff2075d67a2:Assets/Resources.meta
 DefaultImporter:
-=======
-guid: 054cdbb7b48b8b647979875049f74aef
-PrefabImporter:
->>>>>>> c5ce654e14e2d25773b4cbd8a7b62ff2075d67a2
   externalObjects: {}
   userData: 
   assetBundleName: 

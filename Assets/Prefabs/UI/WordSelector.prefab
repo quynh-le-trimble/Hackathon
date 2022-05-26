@@ -685,9 +685,10 @@ GameObject:
   - component: {fileID: 6692119724142203000}
   - component: {fileID: 1816874520414461155}
   - component: {fileID: 6359978021775505967}
+  - component: {fileID: 5928101279041663698}
   m_Layer: 0
   m_Name: WordSelector
-  m_TagString: Untagged
+  m_TagString: WordSelectorCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,6 +750,18 @@ MonoBehaviour:
   _inputButton_2: {fileID: 3808605014559820478}
   _inputButton_3: {fileID: 73736302837275732}
   buttons: []
+--- !u!225 &5928101279041663698
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290858296080840863}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7656973389090662354
 GameObject:
   m_ObjectHideFlags: 0

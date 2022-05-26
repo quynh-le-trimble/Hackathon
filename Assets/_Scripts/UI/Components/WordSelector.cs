@@ -27,6 +27,8 @@ namespace Hackathon
             buttons.Add(_inputButton_1);
             buttons.Add(_inputButton_2);
             buttons.Add(_inputButton_3);
+
+            _wordManager.SetButtonWords();
         }
 
         public void OnWordSelect(Button button)
