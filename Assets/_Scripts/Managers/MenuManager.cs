@@ -10,13 +10,16 @@ namespace Hackathon
         [SerializeField] ProfileMenu m_ProfileMenu;
         [SerializeField] GameMenu m_GameMenu;
 
-        Transform m_MenuParent;
+        [SerializeField ]Transform m_MenuParent;
         Stack<Menu> m_MenuStack = new Stack<Menu>();
 
         protected override void Awake()
         {
-            base.Awake();
-            InitializeMenus();
+            base.Awake();           
+        }
+
+        private void Start() {
+             InitializeMenus();
         }
 
         public void OpenMenu(Menu menuInstance)

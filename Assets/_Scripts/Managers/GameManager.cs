@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using TMPro;
 using UnityEngine;
+using System.Linq;
 
 namespace Hackathon
 {
@@ -13,20 +14,21 @@ namespace Hackathon
 
         [SyncVar]
         public int m_playerCount = 0;
-        [SyncVar]
-        public List<PlayerController> players = new List<PlayerController>();
 
         private NetworkRoomManagerExt m_networkManager;
-        private PlayerController[] allPlayers;
+        private List<PlayerController> allPlayers;
+        private PlayerController currentPlayer;
         private GameMode m_currentGameMode = new Classic();
+        private TurnManager turnManager = new TurnManager();
+        private WordManager wordManager;
 
         private void Start()
         {
             m_currentGameMode.Start(this);
-
+            wordManager = WordManager.Instance;
 
             m_networkManager = FindObjectOfType<NetworkRoomManagerExt>();
-            //StartCoroutine("GameLoop");
+            StartCoroutine("GameLoop");
         }
 
         IEnumerator GameLoop()
@@ -47,7 +49,11 @@ namespace Hackathon
 
             yield return new WaitForSeconds(5);
 
-            // allPlayers = GameObject.FindObjectsOfType<PlayerController>(true);
+            allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
+
+            currentPlayer = turnManager.GetNextPlayer(allPlayers);
+            Debug.Log("Current Player is: " + currentPlayer);
+
             // m_playerCount = allPlayers.Length;
 
             yield return new WaitForSeconds(1);

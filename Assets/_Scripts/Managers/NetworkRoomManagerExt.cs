@@ -29,7 +29,7 @@ namespace Hackathon
         {
             //PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
             //playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
-            GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
+            //GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
             return true;
         }
 
