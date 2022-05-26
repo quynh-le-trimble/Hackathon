@@ -60,6 +60,11 @@ namespace Mirror
         [FormerlySerializedAs("m_PendingPlayers")]
         public List<PendingPlayer> pendingPlayers = new List<PendingPlayer>();
 
+        /// <summary>
+        /// List of players that are in the Room
+        /// </summary>
+        public List<GameObject> gamePlayers = new List<GameObject>();
+
         [Header("Diagnostics")]
 
         /// <summary>
@@ -187,6 +192,7 @@ namespace Mirror
                 gamePlayer = startPos != null
                     ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                     : Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+                gamePlayers.Add(gamePlayer);
             }
 
             if (!OnRoomServerSceneLoadedForPlayer(conn, roomPlayer, gamePlayer))

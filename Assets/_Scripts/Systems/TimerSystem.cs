@@ -2,33 +2,19 @@
 using System;
 using TMPro;
 using UnityEngine;
+using Mirror;
 
 namespace Hackathon
 {
-    public class TimerSystem : MonoBehaviour
-    {
-        public float m_TimeRemaining = 10;
+    public class TimerSystem : NetworkBehaviour
+    {        
+        public const float DefaultTimeRemaining = 10;
+        [SyncVar]
+        public float m_TimeRemaining = 0;
         public Action OnTimerEnd;
 
         [SerializeField] private TextMeshProUGUI m_DisplayText;
-        bool timerIsRunning = false;
-
-        public void SetTime(float time)
-        {
-            m_TimeRemaining = time;
-            DisplayTime(m_TimeRemaining);
-        }
-
-        public void StartTimer()
-        {
-            timerIsRunning = true;
-        }
-
-        public void StartTimer(float time)
-        {
-            m_TimeRemaining = time;
-            timerIsRunning = true;
-        }
+        public bool timerIsRunning = false;
 
         private void Update()
         {
@@ -40,9 +26,25 @@ namespace Hackathon
             }
             else
             {
-                m_TimeRemaining = 0;
                 OnTimerEnd?.Invoke();
                 timerIsRunning = false;
+            }
+
+            DisplayTime(m_TimeRemaining);
+        }
+
+        [Command]
+        public void CmdStartTimer()
+        {
+            SetTime();
+            timerIsRunning = true;
+        }
+
+        public void SetTime()
+        {
+            if (m_TimeRemaining <= 0)
+            {
+                m_TimeRemaining = DefaultTimeRemaining;
             }
 
             DisplayTime(m_TimeRemaining);
