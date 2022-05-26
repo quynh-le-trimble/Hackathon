@@ -38,6 +38,7 @@ namespace Hackathon
             } 
 
             if(Input.GetMouseButton(0) && CanDraw(worldPosition)) _currentLine.SetPosition(worldPosition);
+
         }
 
         bool CanDraw(Vector3 worldPosition)
