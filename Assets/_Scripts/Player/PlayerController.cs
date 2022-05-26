@@ -14,10 +14,7 @@ namespace Hackathon
         [SyncVar]
         public Color _lineColor = Color.white;
         [SyncVar]
-<<<<<<< HEAD
         public string _playerName;
-=======
->>>>>>> 8716468... Beginning of Word Manager
         public string _currentWord = "";
 
         private Camera m_cam;
@@ -31,11 +28,7 @@ namespace Hackathon
             m_RigidBody = GetComponent<Rigidbody>();            
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
-
-             GameMenu.Open();
         }
-
-    
 
         void Update()
         {

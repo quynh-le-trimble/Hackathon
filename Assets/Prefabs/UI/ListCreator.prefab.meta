@@ -1,15 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Scenes/DrawingScene.unity.meta
-<<<<<<< HEAD
 guid: 72e0556dc9efd7c44974a462f457b31e
-=======
-guid: a2a1c43dcba5912438b44915c51b45dc
->>>>>>> e5e937e... merged
 DefaultImporter:
-=======
-guid: 054cdbb7b48b8b647979875049f74aef
-PrefabImporter:
->>>>>>> 56fa5b0... current progress:Assets/Prefabs/UI/ListCreator.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

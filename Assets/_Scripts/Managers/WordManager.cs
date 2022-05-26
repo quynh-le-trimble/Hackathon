@@ -2,24 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-using UnityEngine.SceneManagement;
->>>>>>> 8716468... Beginning of Word Manager
-=======
->>>>>>> e0644b1... Fixed Lobby and Game Scenes
 using UnityEngine.UI;
 
 namespace Hackathon
 {
     public class WordManager : Singleton<WordManager>
-<<<<<<< HEAD
-=======
-    public class WordManager : PersistentSingleton<WordManager>
->>>>>>> 8716468... Beginning of Word Manager
-=======
->>>>>>> e0644b1... Fixed Lobby and Game Scenes
     {
         private static class WordList
         {
@@ -74,68 +61,6 @@ namespace Hackathon
                 hideButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
             }
             
-<<<<<<< HEAD
-=======
-
-        [SerializeField] TMP_InputField _inputText;
-        [SerializeField] Button _inputButton;
-        private PlayerController _playerController;
-        
-
-        //Default list to use if no list passed in
-        string DefaultWordList = "cat,dog,car,house,microprocessor,speaker,knife,computer";
-
-        void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            if (scene.name == "Game")
-            {
-                GameObject[] buttons = GameObject.FindGameObjectsWithTag("ChooseWordButton");
-                foreach (GameObject button in buttons)
-                {
-                    Debug.Log("Before: " + button.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text);
-                    GetNextRandomWord(button.GetComponent<Button>());
-                    Debug.Log("After: " + button.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text);
-                }
-            }
-        }
-
-        void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        public void OnButtonPress()
-        {
-            string wordList;
-
-            if (_inputButton.tag == "SetWordListButton")
-            {
-                if (!string.IsNullOrEmpty(_inputText.text) && _inputText.text != "Enter comma seperated word list here")
-                    wordList = _inputText.text;
-                else
-                    wordList = DefaultWordList;
-                
-                WordList.parsedWordList = wordList.Split(',').ToList();
-                WordList.usedWordsList = new List<string>();
-            }
-            else
-            {
-                _playerController = (PlayerController)GameObject.FindObjectsOfType(typeof(PlayerController)).FirstOrDefault(o => ((PlayerController)o).isLocalPlayer);
-
-                // Expose Chosen word and hide buttons
-                _playerController.CmdUpdateCurrentWord(_inputButton.GetComponentInChildren<TextMeshProUGUI>().text);
-                _inputButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
-                _inputButton.GetComponentInParent<CanvasGroup>().interactable = false;
-                _inputButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
-            }
->>>>>>> 8716468... Beginning of Word Manager
-=======
->>>>>>> e0644b1... Fixed Lobby and Game Scenes
         }
 
         private void GetNextRandomWord(Button button)

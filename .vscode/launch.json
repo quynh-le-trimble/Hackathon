@@ -7,11 +7,7 @@
         {
             "name": "Unity Editor",
             "type": "unity",
-<<<<<<< HEAD
             "path": "/D:/Users/Documents/Unity/Hackathon/Library/EditorInstance.json",
-=======
-            "path": "/C:/Viewpoint/Github/Hackathon2/Library/EditorInstance.json",
->>>>>>> e0644b1... Fixed Lobby and Game Scenes
             "request": "launch"
         },
         {
