@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Hackathon
 {
-    public class TurnManager : Singleton<TurnManager>
+    public class TurnManager
     {
         public PlayerController _currentPlayer;
         public NetworkRoomManager roomManager;
