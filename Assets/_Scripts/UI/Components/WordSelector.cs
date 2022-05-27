@@ -8,12 +8,14 @@ namespace Hackathon
 {
     public class WordSelector : NetworkBehaviour
     {
+
+        [SerializeField] GameObject WordSelectorUI;
         [SerializeField] Button _inputButton_1;
         [SerializeField] Button _inputButton_2;
         [SerializeField] Button _inputButton_3;
         private WordManager _wordManager;
 
-        public List<Button> buttons = new List<Button>();
+        [HideInInspector] public List<Button> buttons = new List<Button>();
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +31,11 @@ namespace Hackathon
             buttons.Add(_inputButton_3);
 
             _wordManager.SetButtonWords();
+        }
+
+        public override void OnStartAuthority()
+        {
+            WordSelectorUI.SetActive(true);
         }
 
         public void OnWordSelect(Button button)

@@ -4,6 +4,7 @@ using Mirror;
 using TMPro;
 using UnityEngine;
 using System.Linq;
+using System;
 
 namespace Hackathon
 {
@@ -52,12 +53,26 @@ namespace Hackathon
             allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
 
             currentPlayer = turnManager.GetNextPlayer(allPlayers);
-            Debug.Log("Current Player is: " + currentPlayer);
+            SetActivePlayer(currentPlayer);
 
+            Debug.Log("Current Player is: " + currentPlayer);
+            yield return new WaitForSeconds(5);
+
+            currentPlayer = turnManager.GetNextPlayer(allPlayers);
+            SetActivePlayer(currentPlayer);
+
+            Debug.Log("Current Player is: " + currentPlayer);
             // m_playerCount = allPlayers.Length;
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
         }
+
+        private void SetActivePlayer(PlayerController currentPlayer)
+        {
+            allPlayers.ForEach(p => p._isActiveDrawer = false);
+            currentPlayer._isActiveDrawer = true;
+        }
+
         IEnumerator PlayGame()
         {
             if (m_notificationText != null)

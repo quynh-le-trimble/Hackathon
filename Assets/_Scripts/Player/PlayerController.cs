@@ -15,18 +15,21 @@ namespace Hackathon
         public Color _lineColor = Color.white;
         [SyncVar]
         public string _playerName;
+
+        [SyncVar(hook = "OnIsActiveDrawer")]
+        public bool _isActiveDrawer;
         public string _currentWord = "";
-        
+
 
         private Camera m_cam;
         private RectTransform m_Background;
         private Line _currentLine;
         private Rigidbody m_RigidBody;
-        
+
         void Start()
         {
-            m_cam = Camera.main;     
-            m_RigidBody = GetComponent<Rigidbody>();            
+            m_cam = Camera.main;
+            m_RigidBody = GetComponent<Rigidbody>();
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
         }
@@ -52,6 +55,11 @@ namespace Hackathon
             {
                 Debug.Log("Current Word is: " + _currentWord);
             }
+        }
+
+        private void OnIsActiveDrawer(bool oldVal, bool newVal)
+        {
+            Debug.Log($"Active Drawer: {connectionToClient.connectionId}::{_playerName}");
         }
 
         [Command]
