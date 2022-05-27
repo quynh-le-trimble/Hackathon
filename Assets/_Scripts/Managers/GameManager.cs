@@ -22,6 +22,8 @@ namespace Hackathon
         private GameMode m_currentGameMode = new Classic();
         private TurnManager turnManager = new TurnManager();
         private WordManager wordManager;
+        private int roundNumber = 1;
+        private int MaxRounds = 5;
 
         private void Start()
         {
@@ -51,17 +53,7 @@ namespace Hackathon
             yield return new WaitForSeconds(5);
 
             allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
-
-            currentPlayer = turnManager.GetNextPlayer(allPlayers);
-            SetActivePlayer(currentPlayer);
-
-            Debug.Log("Current Player is: " + currentPlayer);
-            yield return new WaitForSeconds(5);
-
-            currentPlayer = turnManager.GetNextPlayer(allPlayers);
-            SetActivePlayer(currentPlayer);
-
-            Debug.Log("Current Player is: " + currentPlayer);
+            
             // m_playerCount = allPlayers.Length;
 
             yield return new WaitForSeconds(5);
@@ -79,11 +71,29 @@ namespace Hackathon
             {
                 m_notificationText.gameObject.SetActive(false);
             }
+
+            while (roundNumber != MaxRounds)
+            {
+                Debug.Log("Round " + roundNumber);
+                for (int i = 0; i < allPlayers.Count(); i++)
+                {
+                    currentPlayer = turnManager.GetNextPlayer(allPlayers);
+                    SetActivePlayer(currentPlayer);
+
+                    Debug.Log("Current Player is: " + currentPlayer.connectionToClient.connectionId);
+                    yield return new WaitForSeconds(2);
+                }
+                roundNumber++;
+
+                yield return new WaitForSeconds(5);
+            }
+
             SetPlayerState(true);
             yield return new WaitForSeconds(10);
         }
         IEnumerator EndGame()
         {
+            Debug.Log("Game Over");
             if (m_notificationText != null)
             {
                 m_notificationText.text = "WINNER!";
