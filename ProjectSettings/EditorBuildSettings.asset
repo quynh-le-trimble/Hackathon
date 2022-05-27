@@ -11,13 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 984a939385ebd7f47beddd43b0da05eb
-  - enabled: 0
-    path: Assets/Scenes/Game.unity
-<<<<<<< HEAD
-=======
-    guid: c01d5a3462e470e4fa493d707ed3ee88
   - enabled: 1
-    path: Assets/Scenes/DrawingScene.unity
->>>>>>> c64f320... Beginings of Draw Manager
-    guid: 5971d96311311484194d2dbaf7d8f602
+    path: Assets/_Scripts/Systems/ChatSystem/Test/ChatTestScene.unity
+    guid: 3b47472196d0e9b4f9bc2169f81a50b6
   m_configObjects: {}

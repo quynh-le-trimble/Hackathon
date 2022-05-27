@@ -67,7 +67,7 @@ MonoBehaviour:
   roomPlayerPrefab: {fileID: 2190825836091351358, guid: 2f59a3b6608c09d439210b375eb3899b,
     type: 3}
   RoomScene: Assets/Scenes/Lobby.unity
-  GameplayScene: Assets/Scenes/TestTurnScene.unity
+  GameplayScene: Assets/_Scripts/Systems/ChatSystem/Test/ChatTestScene.unity
   gamePlayers: []
   _allPlayersReady: 0
   roomSlots: []
