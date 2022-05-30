@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Hackathon
 {
-    public class AudioManager : PersistentSingleton<AudioManager>
+    public class AudioManager : Singleton<AudioManager>
     {
         [SerializeField]
         private AudioSource m_musicSource, _effectsSource;

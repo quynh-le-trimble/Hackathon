@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Hackathon
 {
-    public class WordManager : PersistentSingleton<WordManager>
+    public class WordManager : Singleton<WordManager>
     {
         private static class WordList
         {
