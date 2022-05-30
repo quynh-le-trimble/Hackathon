@@ -36,9 +36,15 @@ namespace Hackathon
 
         IEnumerator GameLoop()
         {
+            yield return StartCoroutine("JoiningGame");
             yield return StartCoroutine("EnterGame");
             yield return StartCoroutine("PlayGame");
             yield return StartCoroutine("EndGame");
+        }
+
+        IEnumerator JoiningGame()
+        {
+            yield return new WaitForSeconds(5);
         }
 
         IEnumerator EnterGame()
@@ -49,11 +55,12 @@ namespace Hackathon
                 m_notificationText.gameObject.SetActive(true);
             }
 
-
+            GameMenu.Instance.m_Timer.m_TimeRemaining = 6 * 60f;
+            GameMenu.Instance.m_Timer.StartTimer();
             yield return new WaitForSeconds(5);
 
             allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
-            
+
             // m_playerCount = allPlayers.Length;
 
             yield return new WaitForSeconds(5);
@@ -84,6 +91,11 @@ namespace Hackathon
                     yield return new WaitForSeconds(2);
                 }
                 roundNumber++;
+
+                if (GameMenu.Instance != null)
+                {
+                    GameMenu.Instance.m_SelectedWordText.text = roundNumber.ToString();
+                }
 
                 yield return new WaitForSeconds(5);
             }
