@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 namespace Hackathon
@@ -18,7 +19,8 @@ namespace Hackathon
 
         public void StartGame()
         {
-            manager.ServerChangeScene(manager.GameplayScene);           
+            manager.ServerChangeScene(manager.GameplayScene);
+        
         }
     }
 }

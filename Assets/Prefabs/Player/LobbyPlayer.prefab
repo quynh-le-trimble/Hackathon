@@ -430,7 +430,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7881467846485545108}
         m_TargetAssemblyTypeName: Hackathon.LobbyPlayer, Assembly-CSharp
         m_MethodName: OnReadyPressed
         m_Mode: 1
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7881467846485545108}
         m_TargetAssemblyTypeName: Hackathon.LobbyPlayer, Assembly-CSharp
         m_MethodName: OnStartPressed
         m_Mode: 1

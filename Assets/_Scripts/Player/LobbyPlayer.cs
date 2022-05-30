@@ -11,20 +11,28 @@ namespace Hackathon
         public Button m_ButtonReady;
         public Button m_ButtonStart;
 
+        private NetworkRoomManagerExt manager;
+
         public void OnReadyPressed()
         {
-
+            if (isLocalPlayer)
+            {
+                CmdChangeReadyState(true);
+            }
         }
 
         public void OnStartPressed()
         {
-
+            if (isLocalPlayer)
+            {
+                manager.ServerChangeScene(manager.GameplayScene);
+            }
         }
 
         public override void OnStartAuthority()
         {
             base.OnStartAuthority();
-
+            manager = GameObject.FindObjectOfType<NetworkRoomManagerExt>();
             m_LobbyActions.SetActive(true);
         }
 

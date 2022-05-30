@@ -12,15 +12,7 @@ namespace Hackathon
         /// <param name="sceneName">Name of the new scene.</param>
         public override void OnRoomServerSceneChanged(string sceneName)
         {
-            // if (sceneName == GameplayScene)
-            // {
-            //     MenuManager.Instance.OpenMenu(GameMenu.Instance);
-            // }
-            // else if (sceneName == RoomScene)
-            // {
-            //     MenuManager.Instance.OpenMenu(LobbyMenu.Instance);
-               
-            // }
+           
         }
 
 
@@ -37,7 +29,7 @@ namespace Hackathon
             //PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
             //playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
             //GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
-            //roomPlayer.GetComponent<LobbyPlayer>().m_LobbyActions.SetActive(false);
+            roomPlayer.GetComponent<LobbyPlayer>().m_LobbyActions.SetActive(false);
             return true;
         }
 

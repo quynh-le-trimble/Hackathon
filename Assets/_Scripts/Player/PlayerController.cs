@@ -29,10 +29,11 @@ namespace Hackathon
         private Line _currentLine;
         private Rigidbody m_RigidBody;
 
-        void Start()
+        public override void OnStartLocalPlayer()
         {
             m_cam = Camera.main;
             m_RigidBody = GetComponent<Rigidbody>();
+            MenuManager.Instance.OpenMenu(GameMenu.Instance);
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
         }
