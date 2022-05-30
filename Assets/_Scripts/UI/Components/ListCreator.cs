@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Hackathon
 {
-    public class ListCreator : NetworkBehaviour
+    public class ListCreator : MonoBehaviour
     {
         [SerializeField] private WordManager _wordManager;
 

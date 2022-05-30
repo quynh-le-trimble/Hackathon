@@ -64,10 +64,10 @@ MonoBehaviour:
   - {fileID: 5388787241886112715, guid: 6e8838283feae404c9ea360f974431e0, type: 3}
   showRoomGUI: 1
   minPlayers: 1
-  roomPlayerPrefab: {fileID: 2190825836091351358, guid: 2f59a3b6608c09d439210b375eb3899b,
+  roomPlayerPrefab: {fileID: 7881467846485545108, guid: 2f59a3b6608c09d439210b375eb3899b,
     type: 3}
   RoomScene: Assets/Scenes/Lobby.unity
-  GameplayScene: Assets/_Scripts/Systems/ChatSystem/Test/ChatTestScene.unity
+  GameplayScene: Assets/Scenes/Game.unity
   gamePlayers: []
   _allPlayersReady: 0
   roomSlots: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   sslEnabled: 0
   sslCertJson: ./cert.json
   sslProtocols: 3072
-  _logLevels: 0
+  _logLevels: 4
 --- !u!114 &1009324750364008476
 MonoBehaviour:
   m_ObjectHideFlags: 0

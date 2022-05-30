@@ -551,11 +551,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5233852563732672472}
   - component: {fileID: 5233852563732672451}
-  - component: {fileID: 5233852563732672449}
   - component: {fileID: 3231090121143132067}
-  - component: {fileID: 4437314920790399255}
   - component: {fileID: 1235566246851185265}
   - component: {fileID: 4612737079510918771}
+  - component: {fileID: 6199689598964114179}
+  - component: {fileID: 3342510243571425396}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player
@@ -598,40 +598,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 116c269a177b782439f1f5408b7b9a26
   hasSpawned: 0
---- !u!114 &5233852563732672449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5233852563732672448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0
-  clientAuthority: 1
-  sendInterval: 0.05
-  syncPosition: 1
-  syncRotation: 0
-  syncScale: 0
-  interpolatePosition: 1
-  interpolateRotation: 0
-  interpolateScale: 0
-  bufferTimeMultiplier: 1
-  bufferSizeLimit: 64
-  catchupThreshold: 4
-  catchupMultiplier: 0.1
-  onlySyncOnChange: 1
-  bufferResetMultiplier: 5
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
-  showGizmos: 0
-  showOverlay: 0
-  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!54 &3231090121143132067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -648,29 +614,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4437314920790399255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5233852563732672448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e93547c15942eb48b6daa158094c038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  m_LinePrefab: {fileID: 5388787241886112715, guid: 6e8838283feae404c9ea360f974431e0,
-    type: 3}
-  m_WordSelectorUI: {fileID: 8206133334234297441}
-  _lineWidth: 3
-  _lineColor: {r: 1, g: 1, b: 1, a: 1}
-  _playerName: 
-  _isActiveDrawer: 0
-  _isSelectingWord: 0
-  _currentWord: 
 --- !u!114 &1235566246851185265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +638,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5233852563732672448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f53cc1d02f49d7468d65fcf05229bae, type: 3}
   m_Name: 
@@ -707,6 +650,63 @@ MonoBehaviour:
   _inputButton_2: {fileID: 2312242318108870208}
   _inputButton_3: {fileID: 1569971698604167338}
   buttons: []
+--- !u!114 &6199689598964114179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233852563732672448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  sendInterval: 0.05
+  syncPosition: 1
+  syncRotation: 1
+  syncScale: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 0
+  bufferTimeMultiplier: 1
+  bufferSizeLimit: 64
+  catchupThreshold: 4
+  catchupMultiplier: 0.1
+  onlySyncOnChange: 1
+  bufferResetMultiplier: 5
+  positionSensitivity: 0.01
+  rotationSensitivity: 0.01
+  scaleSensitivity: 0.01
+  showGizmos: 0
+  showOverlay: 0
+  overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &3342510243571425396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233852563732672448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e93547c15942eb48b6daa158094c038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  m_LinePrefab: {fileID: 5388787241886112715, guid: 6e8838283feae404c9ea360f974431e0,
+    type: 3}
+  m_WordSelectorUI: {fileID: 8206133334234297441}
+  _lineWidth: 1
+  _lineColor: {r: 1, g: 1, b: 1, a: 1}
+  _playerName: 
+  _isActiveDrawer: 0
+  _isSelectingWord: 0
+  _currentWord: 
 --- !u!1 &6175337094788986451
 GameObject:
   m_ObjectHideFlags: 0

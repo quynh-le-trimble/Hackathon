@@ -15,11 +15,13 @@ namespace Hackathon
         public void StartHost()
         {
             manager.StartHost();
+            LobbyMenu.Open();
         }
 
         public void StartClient()
         {
-            manager.StartHost();
+            manager.StartClient();
+            LobbyMenu.Open();
         }
 
         

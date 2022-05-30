@@ -569,7 +569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2400743565276028647}
-  - component: {fileID: 6572574509010060652}
   - component: {fileID: 3549601774234215007}
   m_Layer: 0
   m_Name: ListCreator
@@ -600,23 +599,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 280.05, y: 88.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6572574509010060652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595303910219397249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 72e0556dc9efd7c44974a462f457b31e
-  hasSpawned: 0
 --- !u!114 &3549601774234215007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,8 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa91fbe98c4d1df458c57ea6b16b329f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
+  _wordManager: {fileID: 0}
   _inputText: {fileID: 6652519354454224621}
 --- !u!1 &9075471051728919211
 GameObject:

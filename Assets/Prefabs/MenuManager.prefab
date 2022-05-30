@@ -52,3 +52,4 @@ MonoBehaviour:
     type: 3}
   m_GameMenu: {fileID: 8805335287883812827, guid: 5fcc86564540af54a92cc1fbbba238f5,
     type: 3}
+  m_MenuParent: {fileID: 0}
