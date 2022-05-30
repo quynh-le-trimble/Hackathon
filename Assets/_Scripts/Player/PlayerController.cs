@@ -8,6 +8,7 @@ namespace Hackathon
     public class PlayerController : NetworkBehaviour
     {
         public GameObject m_LinePrefab;
+        public GameObject m_WordSelectorUI;
 
         [SyncVar]
         public float _lineWidth = 1f;
@@ -18,6 +19,8 @@ namespace Hackathon
 
         [SyncVar(hook = "OnIsActiveDrawer")]
         public bool _isActiveDrawer;
+        [SyncVar]
+        public bool _isSelectingWord;
         public string _currentWord = "";
 
 
@@ -54,6 +57,16 @@ namespace Hackathon
             if (_currentWord != "")
             {
                 Debug.Log("Current Word is: " + _currentWord);
+            }
+
+            // Show Word Selector based on 2 bools, this is controled from the GameManager
+            if (_isActiveDrawer && _isSelectingWord)
+            {
+                m_WordSelectorUI.SetActive(true);
+            }
+            else
+            {
+                m_WordSelectorUI.SetActive(false);
             }
         }
 

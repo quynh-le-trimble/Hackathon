@@ -86,9 +86,13 @@ namespace Hackathon
                 {
                     currentPlayer = turnManager.GetNextPlayer(allPlayers);
                     SetActivePlayer(currentPlayer);
-
+                    currentPlayer._isActiveDrawer = true;
+                    currentPlayer._isSelectingWord = true;
                     Debug.Log("Current Player is: " + currentPlayer.connectionToClient.connectionId);
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(5);
+                    currentPlayer._isSelectingWord = false;
+                    yield return new WaitForSeconds(5);
+                    currentPlayer._isActiveDrawer = false;
                 }
                 roundNumber++;
 
