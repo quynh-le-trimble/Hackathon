@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Hackathon
 {
-    public class MenuManager : Singleton<MenuManager>
+    public class MenuManager : PersistentSingleton<MenuManager>
     {
         [SerializeField] MainMenu m_MainMenu;
         [SerializeField] LobbyMenu m_LobbyMenu;

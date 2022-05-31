@@ -5,25 +5,24 @@ namespace Hackathon
 {
     public class MainMenu : Menu<MainMenu>
     {
-        private NetworkRoomManagerExt manager;
-
-        void Start()
-        {
-            manager = GameObject.FindObjectOfType<NetworkRoomManagerExt>();
-        }
 
         public void StartHost()
         {
+            var manager = GameObject.FindObjectOfType<NetworkRoomManagerExt>();
             manager.StartHost();
+
             LobbyMenu.Open();
+
         }
 
         public void StartClient()
         {
+            var manager = GameObject.FindObjectOfType<NetworkRoomManagerExt>();
             manager.StartClient();
+
             LobbyMenu.Open();
         }
 
-        
+
     }
 }

@@ -6,6 +6,8 @@ namespace Hackathon
 {
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
+        
+
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
         /// </summary>
