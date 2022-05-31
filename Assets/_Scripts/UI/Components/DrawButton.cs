@@ -28,6 +28,12 @@ namespace Hackathon
                 var buttonWidth = _button.GetComponent<RectTransform>().sizeDelta.x;
                 _playerController.CmdUpdateWidth(buttonWidth);
             }
+
+            if (_button.tag == "Eraser Button")
+            {
+                var buttonColor = _button.transform.parent.Find("Background").gameObject.GetComponent<Image>().color;
+                _playerController.CmdUpdateColor(buttonColor);
+            }
         }
     }
 }

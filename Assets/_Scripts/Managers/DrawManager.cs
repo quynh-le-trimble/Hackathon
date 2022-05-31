@@ -10,6 +10,7 @@ namespace Hackathon
         public const float RESOLUTION = 0.1f;
         public float m_lineWidth = 1f;
         public Color m_lineColor;
+        private int m_orderNumber = 0;
 
         private Camera m_cam;
         [SerializeField]
@@ -34,9 +35,11 @@ namespace Hackathon
             {
                 Debug.Log("world position: " + worldPosition.x + " " + worldPosition.y);
                 _currentLine = Instantiate(_networkLine, worldPosition, Quaternion.identity);
+                _currentLine.GetComponent<LineRenderer>().sortingOrder = m_orderNumber;
                 _currentLine.SetColor(m_lineColor);
                 _currentLine.SetWidth(m_lineWidth);
                 NetworkServer.Spawn(_currentLine.gameObject);
+                m_orderNumber++;
             } 
 
             if(Input.GetMouseButton(0) && CanDraw(worldPosition)) _currentLine.SetPosition(worldPosition);

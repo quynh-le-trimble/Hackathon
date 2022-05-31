@@ -55,8 +55,7 @@ namespace Hackathon
                 m_notificationText.gameObject.SetActive(true);
             }
 
-            GameMenu.Instance.m_Timer.m_TimeRemaining = 6 * 60f;
-            GameMenu.Instance.m_Timer.StartTimer();
+            GameMenu.Instance.m_Timer.m_TimeRemaining = 10f;
             yield return new WaitForSeconds(5);
 
             allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
@@ -81,31 +80,37 @@ namespace Hackathon
 
             while (roundNumber != MaxRounds)
             {
-                Debug.Log("Round " + roundNumber);
+                if (GameMenu.Instance != null)
+                {
+                    GameMenu.Instance.m_SelectedWordText.text = roundNumber.ToString();
+                }
+
                 for (int i = 0; i < allPlayers.Count(); i++)
                 {
                     currentPlayer = turnManager.GetNextPlayer(allPlayers);
                     SetActivePlayer(currentPlayer);
                     currentPlayer._isActiveDrawer = true;
                     currentPlayer._isSelectingWord = true;
-                    Debug.Log("Current Player is: " + currentPlayer.connectionToClient.connectionId);
-                    yield return new WaitForSeconds(5);
+
+                    // Wait until word is selected
+                    yield return new WaitForSeconds(10);
                     currentPlayer._isSelectingWord = false;
-                    yield return new WaitForSeconds(5);
+
+                    GameMenu.Instance.m_Timer.StartTimer();
+                    yield return new WaitForSeconds(10);
+                    Debug.Log(GameMenu.Instance.m_Timer.timerIsRunning);
+                    // Wait until timer is over
+                    // while (GameMenu.Instance.m_Timer.timerIsRunning)
+                    // {
+                    //     //play game
+                    //     Debug.Log("Playing game");
+                    // }
                     currentPlayer._isActiveDrawer = false;
                 }
                 roundNumber++;
-
-                if (GameMenu.Instance != null)
-                {
-                    GameMenu.Instance.m_SelectedWordText.text = roundNumber.ToString();
-                }
-
-                yield return new WaitForSeconds(5);
             }
 
             SetPlayerState(true);
-            yield return new WaitForSeconds(10);
         }
         IEnumerator EndGame()
         {

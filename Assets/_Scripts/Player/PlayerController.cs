@@ -9,6 +9,8 @@ namespace Hackathon
     {
         public GameObject m_LinePrefab;
         public GameObject m_WordSelectorUI;
+        public GameObject m_DrawCanvas;
+        private int m_orderNumber = 0;
 
         [SyncVar]
         public float _lineWidth = 1f;
@@ -23,7 +25,6 @@ namespace Hackathon
         public bool _isSelectingWord;
         public string _currentWord = "";
 
-
         private Camera m_cam;
         private RectTransform m_Background;
         private Line _currentLine;
@@ -36,6 +37,7 @@ namespace Hackathon
             MenuManager.Instance.OpenMenu(GameMenu.Instance);
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
+            m_DrawCanvas.SetActive(true);
         }
 
         void Update()
@@ -80,10 +82,12 @@ namespace Hackathon
         private void CmdNewLine(Vector3 position)
         {
             _currentLine = Instantiate(m_LinePrefab, position, Quaternion.identity, m_Background).GetComponent<Line>();
+            _currentLine.GetComponent<LineRenderer>().sortingOrder = m_orderNumber;
             _currentLine.SetColor(_lineColor);
             _currentLine.SetWidth(_lineWidth);
             _currentLine.SetPosition(position);
             NetworkServer.Spawn(_currentLine.gameObject);
+            m_orderNumber++;
         }
 
         [Command]
