@@ -35,7 +35,7 @@ namespace Hackathon
 
         public override void OnStartAuthority()
         {
-            WordSelectorUI.SetActive(true);
+            
         }
 
         public void OnWordSelect(Button button)

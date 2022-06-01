@@ -54,7 +54,7 @@ namespace Hackathon
                 manager.StopServer();
             }
 
-            MainMenu.Open();            
+            MainMenu.Open();
         }
 
         public override void OnStartAuthority()
@@ -111,11 +111,14 @@ namespace Hackathon
         public override void OnClientEnterRoom()
         {
             //Debug.Log($"OnClientEnterRoom {SceneManager.GetActiveScene().path}");
+
+
         }
 
         public override void OnClientExitRoom()
         {
             //Debug.Log($"OnClientExitRoom {SceneManager.GetActiveScene().path}");
+            m_LobbyActions.SetActive(false);
         }
 
         public override void IndexChanged(int oldIndex, int newIndex)

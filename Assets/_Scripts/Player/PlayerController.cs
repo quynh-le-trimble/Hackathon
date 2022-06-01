@@ -1,5 +1,6 @@
 using UnityEngine;
 using Mirror;
+using System;
 
 namespace Hackathon
 {
@@ -19,10 +20,11 @@ namespace Hackathon
         [SyncVar]
         public string _playerName;
 
-        [SyncVar(hook = "OnIsActiveDrawer")]
-        public bool _isActiveDrawer;
         [SyncVar]
-        public bool _isSelectingWord;
+        public bool _isActiveDrawer;
+
+        [SyncVar(hook = nameof(SyncIsActiveDrawer))]
+        public Boolean _isSelectingWord;
         public string _currentWord = "";
 
         private Camera m_cam;
@@ -30,7 +32,7 @@ namespace Hackathon
         private Line _currentLine;
         private Rigidbody m_RigidBody;
 
-        public override void OnStartLocalPlayer()
+        public override void OnStartAuthority()
         {
             m_cam = Camera.main;
             m_RigidBody = GetComponent<Rigidbody>();
@@ -38,7 +40,7 @@ namespace Hackathon
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
             m_DrawCanvas.SetActive(true);
-            _playerName = "Player" + netId.ToString();
+            m_WordSelectorUI.SetActive(false);
         }
 
         void Update()
@@ -63,7 +65,13 @@ namespace Hackathon
                 Debug.Log("Current Word is: " + _currentWord);
             }
 
-            // Show Word Selector based on 2 bools, this is controled from the GameManager
+
+        }
+
+        private void SyncIsActiveDrawer(bool oldVal, bool newVal)
+        {
+            Debug.Log($"Active Drawer: {_playerName}");
+            //Show Word Selector based on 2 bools, this is controled from the GameManager
             if (_isActiveDrawer && _isSelectingWord)
             {
                 m_WordSelectorUI.SetActive(true);
@@ -72,11 +80,6 @@ namespace Hackathon
             {
                 m_WordSelectorUI.SetActive(false);
             }
-        }
-
-        private void OnIsActiveDrawer(bool oldVal, bool newVal)
-        {
-            Debug.Log($"Active Drawer: {connectionToClient.connectionId}::{_playerName}");
         }
 
         [Command]

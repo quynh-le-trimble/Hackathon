@@ -26,8 +26,8 @@ namespace Hackathon
 
         private void HandleNewMessage(string message)
         {
-
-
+            var chatText = Instantiate(m_ChatTextPrefab, m_chatTextParent);
+            chatText.GetComponent<TextMeshProUGUI>().text = name + ": " + message;
         }
 
         [ClientCallback]
@@ -54,10 +54,9 @@ namespace Hackathon
         {
             // Validation 
 
-            var chatText = Instantiate(m_ChatTextPrefab, m_chatTextParent);
 
-            chatText.GetComponent<TextMeshProUGUI>().text = name + ": " + message;
-            NetworkServer.Spawn(chatText.gameObject);
+
+            RpcHandleMessage(name + ": " + message);
         }
 
         [ClientRpc]

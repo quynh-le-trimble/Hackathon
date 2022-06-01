@@ -6,7 +6,7 @@ namespace Hackathon
 {
     public class NetworkRoomManagerExt : NetworkRoomManager
     {
-        
+
 
         /// <summary>
         /// This is called on the server when a networked scene finishes loading.
@@ -31,8 +31,14 @@ namespace Hackathon
             //PlayerScore playerScore = gamePlayer.GetComponent<PlayerScore>();
             //playerScore.index = roomPlayer.GetComponent<NetworkRoomPlayer>().index;
             //GameManager.Instance.players.Add(gamePlayer.GetComponent<PlayerController>());
-            roomPlayer.GetComponent<LobbyPlayer>().m_LobbyActions.SetActive(false);
+           
+            gamePlayer.GetComponent<PlayerController>()._playerName = "Player" + conn.connectionId;
             return true;
+        }
+
+        public override void OnRoomClientSceneChanged()
+        {
+            base.OnRoomClientSceneChanged();
         }
 
         public override void OnRoomStopClient()
@@ -62,7 +68,7 @@ namespace Hackathon
 #if UNITY_SERVER
             base.OnRoomServerPlayersReady();
 #else
-            showStartButton = true;
+            //showStartButton = true;
 #endif
         }
 

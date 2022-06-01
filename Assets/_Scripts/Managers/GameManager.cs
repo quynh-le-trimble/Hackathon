@@ -143,5 +143,10 @@ namespace Hackathon
             m_currentGameMode = mode;
             m_currentGameMode.Start(this);
         }
+
+        public void TargetWordChoices(NetworkConnection conn, string[] words) {
+
+        }
+
     }
 }
