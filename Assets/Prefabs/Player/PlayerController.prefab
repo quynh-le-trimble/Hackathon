@@ -172,8 +172,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   m_ChatSystemUI: {fileID: 6906305515410284196}
-  m_ChatBoxDisplay: {fileID: 3624358680218077285}
   m_ChatInput: {fileID: 4315299606417878026}
+  m_ChatTextPrefab: {fileID: 4984302904006348625, guid: 84d193bc33fafb841a5c1688023ca459,
+    type: 3}
+  m_chatTextParent: {fileID: 7651040948624688041}
 --- !u!114 &4612737079510918771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,41 +492,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5233852563732672472}
     m_Modifications:
-    - target: {fileID: 666829645192663635, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 666829645192663635, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 666829645192663635, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -17
-      objectReference: {fileID: 0}
     - target: {fileID: 1507611921904792616, guid: 22515c531d730ec4e96ce3393336dd49,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1235566246851185265}
-    - target: {fileID: 4804552297835617483, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4804552297835617483, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.42625746
-      objectReference: {fileID: 0}
-    - target: {fileID: 5657997348969010024, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_HorizontalScrollbar
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7789137713458367238, guid: 22515c531d730ec4e96ce3393336dd49,
         type: 3}
       propertyPath: m_Pivot.x
@@ -635,25 +607,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChatUI
       objectReference: {fileID: 0}
-    - target: {fileID: 8131032973055428230, guid: 22515c531d730ec4e96ce3393336dd49,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22515c531d730ec4e96ce3393336dd49, type: 3}
---- !u!114 &3624358680218077285 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2108621592499867719, guid: 22515c531d730ec4e96ce3393336dd49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3390958932098603042}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4315299606417878026 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1507611921904792616, guid: 22515c531d730ec4e96ce3393336dd49,
@@ -675,6 +630,12 @@ RectTransform:
 --- !u!1 &6906305515410284196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8131032973055428230, guid: 22515c531d730ec4e96ce3393336dd49,
+    type: 3}
+  m_PrefabInstance: {fileID: 3390958932098603042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &7651040948624688041 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4981805935192365963, guid: 22515c531d730ec4e96ce3393336dd49,
     type: 3}
   m_PrefabInstance: {fileID: 3390958932098603042}
   m_PrefabAsset: {fileID: 0}

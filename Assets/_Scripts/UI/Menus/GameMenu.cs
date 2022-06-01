@@ -6,5 +6,6 @@ namespace Hackathon
     {
        public TextMeshProUGUI m_SelectedWordText;
        public TimerSystem m_Timer;
+        public TextMeshProUGUI m_notificationText;
     }
 }

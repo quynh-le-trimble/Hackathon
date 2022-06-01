@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -8,8 +9,9 @@ namespace Hackathon
     public class ChatSystem : NetworkBehaviour
     {
         [SerializeField] GameObject m_ChatSystemUI;
-        [SerializeField] TextMeshProUGUI m_ChatBoxDisplay;
         [SerializeField] TMP_InputField m_ChatInput;
+        [SerializeField] GameObject m_ChatTextPrefab;
+        [SerializeField] Transform m_chatTextParent;
 
         private static event Action<string> OnMessage;
 
@@ -21,7 +23,8 @@ namespace Hackathon
 
         private void HandleNewMessage(string message)
         {
-            m_ChatBoxDisplay.text += message;
+
+
         }
 
         [ClientCallback]
@@ -38,16 +41,27 @@ namespace Hackathon
 
             if (string.IsNullOrWhiteSpace(message)) { return; }
 
-            CmdSendMessage(message);
+            CmdSendMessage(netId, message);
             m_ChatInput.text = string.Empty;
+            m_ChatInput.ActivateInputField();
         }
 
         [Command]
-        private void CmdSendMessage(string message)
+        private void CmdSendMessage(uint id, string message)
         {
             // Validation 
 
-            RpcHandleMessage($"[{connectionToClient.connectionId}]: {message}");
+            //RpcHandleMessage($"[{connectionToClient.connectionId}]: {message}");
+            //var player = GameManager.Instance.allPlayers[id];
+
+
+            var chatText = Instantiate(m_ChatTextPrefab, m_chatTextParent);
+            // if (player != null)
+            // {
+                chatText.GetComponent<TextMeshProUGUI>().text = "id: " + message;
+                NetworkServer.Spawn(chatText.gameObject);
+            //}
+
         }
 
         [ClientRpc]

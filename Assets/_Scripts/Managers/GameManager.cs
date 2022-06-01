@@ -17,7 +17,8 @@ namespace Hackathon
         public int m_playerCount = 0;
 
         private NetworkRoomManagerExt m_networkManager;
-        private List<PlayerController> allPlayers;
+        private List<PlayerController> players;
+        public Dictionary<uint, PlayerController> allPlayers = new Dictionary<uint, PlayerController>();
         private PlayerController currentPlayer;
         private GameMode m_currentGameMode = new Classic();
         private TurnManager turnManager = new TurnManager();
@@ -32,6 +33,7 @@ namespace Hackathon
 
             m_networkManager = FindObjectOfType<NetworkRoomManagerExt>();
             StartCoroutine("GameLoop");
+
         }
 
         IEnumerator GameLoop()
@@ -44,39 +46,38 @@ namespace Hackathon
 
         IEnumerator JoiningGame()
         {
-            yield return new WaitForSeconds(5);
+            GameMenu.Instance.m_notificationText.gameObject.SetActive(true);
+            GameMenu.Instance.m_notificationText.text = "Waiting for everyone to join...";
+
+            GameMenu.Instance.m_Timer.m_TimeRemaining = 3f;
+            GameMenu.Instance.m_Timer.StartTimer();
+            yield return new WaitForSeconds(3);
+            players = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
+
+            foreach (var player in players)
+            {
+                allPlayers.Add(player.netId, player);
+            }
         }
 
         IEnumerator EnterGame()
         {
-            if (m_notificationText != null)
-            {
-                m_notificationText.text = "READY?";
-                m_notificationText.gameObject.SetActive(true);
-            }
+            GameMenu.Instance.m_notificationText.text = "All Players joined, Entering Game in 3...";
 
-            GameMenu.Instance.m_Timer.m_TimeRemaining = 10f;
-            yield return new WaitForSeconds(5);
-
-            allPlayers = GameObject.FindObjectsOfType<PlayerController>(true).ToList();
-
-            // m_playerCount = allPlayers.Length;
-
-            yield return new WaitForSeconds(5);
+            GameMenu.Instance.m_Timer.m_TimeRemaining = 3f;
+            GameMenu.Instance.m_Timer.StartTimer();
+            yield return new WaitForSeconds(3);
         }
 
         private void SetActivePlayer(PlayerController currentPlayer)
         {
-            allPlayers.ForEach(p => p._isActiveDrawer = false);
+            players.ForEach(p => p._isActiveDrawer = false);
             currentPlayer._isActiveDrawer = true;
         }
 
         IEnumerator PlayGame()
         {
-            if (m_notificationText != null)
-            {
-                m_notificationText.gameObject.SetActive(false);
-            }
+            GameMenu.Instance.m_notificationText.gameObject.SetActive(false);
 
             while (roundNumber != MaxRounds)
             {
@@ -87,7 +88,7 @@ namespace Hackathon
 
                 for (int i = 0; i < allPlayers.Count(); i++)
                 {
-                    currentPlayer = turnManager.GetNextPlayer(allPlayers);
+                    currentPlayer = turnManager.GetNextPlayer(players);
                     SetActivePlayer(currentPlayer);
                     currentPlayer._isActiveDrawer = true;
                     currentPlayer._isSelectingWord = true;

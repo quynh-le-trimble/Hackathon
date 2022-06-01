@@ -12,11 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 984a939385ebd7f47beddd43b0da05eb
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/Game.unity
     guid: 5971d96311311484194d2dbaf7d8f602
-=======
-    path: Assets/_Scripts/Systems/ChatSystem/Test/ChatTestScene.unity
-    guid: 3b47472196d0e9b4f9bc2169f81a50b6
->>>>>>> 3f66f2b... Add initial chat system
   m_configObjects: {}
