@@ -17,7 +17,7 @@ namespace Hackathon
         public int m_playerCount = 0;
 
         private NetworkRoomManagerExt m_networkManager;
-        private List<PlayerController> players;
+        public List<PlayerController> players;
         public Dictionary<uint, PlayerController> allPlayers = new Dictionary<uint, PlayerController>();
         private PlayerController currentPlayer;
         private GameMode m_currentGameMode = new Classic();
@@ -94,12 +94,16 @@ namespace Hackathon
                     currentPlayer._isSelectingWord = true;
 
                     // Wait until word is selected
-                    yield return new WaitForSeconds(10);
+                    GameMenu.Instance.m_Timer.m_TimeRemaining = 5f;
+                    GameMenu.Instance.m_Timer.StartTimer();
+                    yield return new WaitForSeconds(5);
                     currentPlayer._isSelectingWord = false;
 
+                    GameMenu.Instance.m_Timer.m_TimeRemaining = 5f;
                     GameMenu.Instance.m_Timer.StartTimer();
-                    yield return new WaitForSeconds(10);
-                    Debug.Log(GameMenu.Instance.m_Timer.timerIsRunning);
+                    yield return new WaitForSeconds(5);
+
+                    //Debug.Log(GameMenu.Instance.m_Timer.timerIsRunning);
                     // Wait until timer is over
                     // while (GameMenu.Instance.m_Timer.timerIsRunning)
                     // {

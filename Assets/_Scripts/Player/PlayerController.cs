@@ -38,6 +38,7 @@ namespace Hackathon
             m_Background = GameObject.FindWithTag("BG").GetComponent<RectTransform>();
             transform.position = GetCursorPosition();
             m_DrawCanvas.SetActive(true);
+            _playerName = "Player" + netId.ToString();
         }
 
         void Update()

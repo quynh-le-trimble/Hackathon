@@ -13,10 +13,13 @@ namespace Hackathon
         [SerializeField] GameObject m_ChatTextPrefab;
         [SerializeField] Transform m_chatTextParent;
 
+        private PlayerController m_playerController;
+
         private static event Action<string> OnMessage;
 
         public override void OnStartAuthority()
         {
+            m_playerController = GetComponent<PlayerController>();
             m_ChatSystemUI.SetActive(true);
             OnMessage += HandleNewMessage;
         }
@@ -41,27 +44,20 @@ namespace Hackathon
 
             if (string.IsNullOrWhiteSpace(message)) { return; }
 
-            CmdSendMessage(netId, message);
+            CmdSendMessage(m_playerController._playerName, message);
             m_ChatInput.text = string.Empty;
             m_ChatInput.ActivateInputField();
         }
 
         [Command]
-        private void CmdSendMessage(uint id, string message)
+        private void CmdSendMessage(string name, string message)
         {
             // Validation 
 
-            //RpcHandleMessage($"[{connectionToClient.connectionId}]: {message}");
-            //var player = GameManager.Instance.allPlayers[id];
-
-
             var chatText = Instantiate(m_ChatTextPrefab, m_chatTextParent);
-            // if (player != null)
-            // {
-                chatText.GetComponent<TextMeshProUGUI>().text = "id: " + message;
-                NetworkServer.Spawn(chatText.gameObject);
-            //}
 
+            chatText.GetComponent<TextMeshProUGUI>().text = name + ": " + message;
+            NetworkServer.Spawn(chatText.gameObject);
         }
 
         [ClientRpc]
