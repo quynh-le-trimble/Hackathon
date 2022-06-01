@@ -86,6 +86,7 @@ namespace Hackathon
         private void CmdNewLine(Vector3 position)
         {
             _currentLine = Instantiate(m_LinePrefab, position, Quaternion.identity, m_Background).GetComponent<Line>();
+            _currentLine.gameObject.tag = "Line";
             _currentLine.GetComponent<LineRenderer>().sortingOrder = m_orderNumber;
             _currentLine.SetColor(_lineColor);
             _currentLine.SetWidth(_lineWidth);

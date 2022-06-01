@@ -31,8 +31,11 @@ namespace Hackathon
 
             if (_button.tag == "Eraser Button")
             {
-                var buttonColor = _button.transform.parent.Find("Background").gameObject.GetComponent<Image>().color;
-                _playerController.CmdUpdateColor(buttonColor);
+                GameObject[] lines = GameObject.FindGameObjectsWithTag("Line");
+                foreach (GameObject line in lines)
+                {
+                    Destroy(line);
+                }
             }
         }
     }
