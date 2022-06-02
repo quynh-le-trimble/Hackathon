@@ -20,17 +20,20 @@ namespace Hackathon
         [SyncVar]
         public string _playerName;
 
-        [SyncVar]
+        [SyncVar(hook = nameof(SyncIsActiveDrawer))]
         public bool _isActiveDrawer;
 
-        [SyncVar(hook = nameof(SyncIsActiveDrawer))]
+        [SyncVar(hook = nameof(SyncIsSelectingWord))]
         public Boolean _isSelectingWord;
+
         public string _currentWord = "";
 
         private Camera m_cam;
         private RectTransform m_Background;
         private Line _currentLine;
         private Rigidbody m_RigidBody;
+
+        private bool isDisabled;
 
         public override void OnStartAuthority()
         {
@@ -50,12 +53,12 @@ namespace Hackathon
             var pos = GetCursorPosition();
             transform.position = pos;
 
-            if (Input.GetMouseButtonDown(0)) // On Left Click
+            if (Input.GetMouseButtonDown(0) && !isDisabled) // On Left Click
             {
                 CmdNewLine(pos);
             }
 
-            if (Input.GetMouseButton(0))  // While Left Click is down
+            if (Input.GetMouseButton(0) && !isDisabled)  // While Left Click is down
             {
                 CmdAddToLine(pos);
             }
@@ -70,15 +73,15 @@ namespace Hackathon
 
         private void SyncIsActiveDrawer(bool oldVal, bool newVal)
         {
-            Debug.Log($"Active Drawer: {_playerName}");
-            //Show Word Selector based on 2 bools, this is controled from the GameManager
-            if (_isActiveDrawer && _isSelectingWord)
-            {
-                m_WordSelectorUI.SetActive(true);
+            if(isLocalPlayer) {
+                isDisabled = !_isActiveDrawer;
             }
-            else
-            {
-                m_WordSelectorUI.SetActive(false);
+        }
+
+        private void SyncIsSelectingWord(bool oldVal, bool newVal)
+        {
+            if(isLocalPlayer) {
+                m_WordSelectorUI.SetActive(_isSelectingWord);
             }
         }
 

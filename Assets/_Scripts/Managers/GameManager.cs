@@ -58,11 +58,13 @@ namespace Hackathon
             {
                 allPlayers.Add(player.netId, player);
             }
+
+            m_playerCount = players.Count;
         }
 
         IEnumerator EnterGame()
         {
-            GameMenu.Instance.m_notificationText.text = "All Players joined, Entering Game in 3...";
+            GameMenu.Instance.m_notificationText.text = "All Players joined, Entering Game";
 
             GameMenu.Instance.m_Timer.m_TimeRemaining = 3f;
             GameMenu.Instance.m_Timer.StartTimer();
@@ -71,8 +73,13 @@ namespace Hackathon
 
         private void SetActivePlayer(PlayerController currentPlayer)
         {
-            players.ForEach(p => p._isActiveDrawer = false);
+            players.ForEach(p => 
+            {
+                p._isActiveDrawer = false;
+                p._isSelectingWord = false;
+            });
             currentPlayer._isActiveDrawer = true;
+            currentPlayer._isSelectingWord = true;
         }
 
         IEnumerator PlayGame()
@@ -90,8 +97,7 @@ namespace Hackathon
                 {
                     currentPlayer = turnManager.GetNextPlayer(players);
                     SetActivePlayer(currentPlayer);
-                    currentPlayer._isActiveDrawer = true;
-                    currentPlayer._isSelectingWord = true;
+                  
 
                     // Wait until word is selected
                     GameMenu.Instance.m_Timer.m_TimeRemaining = 5f;
@@ -110,7 +116,6 @@ namespace Hackathon
                     //     //play game
                     //     Debug.Log("Playing game");
                     // }
-                    currentPlayer._isActiveDrawer = false;
                 }
                 roundNumber++;
             }

@@ -9,6 +9,9 @@ TagManager:
   - BG
   - ChooseWordButton
   - SetWordListButton
+  - Eraser Button
+  - WordSelectorCanvas
+  - Line
   layers:
   - Default
   - TransparentFX
