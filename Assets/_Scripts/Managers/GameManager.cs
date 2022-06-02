@@ -88,11 +88,6 @@ namespace Hackathon
 
             while (roundNumber != MaxRounds)
             {
-                if (GameMenu.Instance != null)
-                {
-                    GameMenu.Instance.m_SelectedWordText.text = roundNumber.ToString();
-                }
-
                 for (int i = 0; i < allPlayers.Count(); i++)
                 {
                     currentPlayer = turnManager.GetNextPlayer(players);

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,15 +14,23 @@ namespace Hackathon
             public static List<string> parsedWordList { get; set; }
             public static List<string> usedWordsList { get; set; }
         }
-       
+
         private PlayerController _playerController;
         public List<Button> buttons = new List<Button>();
 
+        public string currentWord = string.Empty;
+
         [HideInInspector] public ListCreator _listCreator;
         [HideInInspector] public WordSelector _wordSelector;
-        
+
         //Default list to use if no list passed in
-        string DefaultWordList = "cat,dog,car,house,microprocessor,speaker,knife,computer";
+        string DefaultWordList = "cat,dog,car,house,cpu,speaker,knife,computer";
+
+        private void Start()
+        {
+            WordList.parsedWordList = DefaultWordList.Split(',').ToList();
+            WordList.usedWordsList = new List<string>();
+        }
 
         public void SetButtonWords()
         {
@@ -37,28 +46,31 @@ namespace Hackathon
         {
             string wordList;
             if (!string.IsNullOrEmpty(_listCreator._inputText.text) && _listCreator._inputText.text != "Enter comma seperated word list here")
-                    wordList = _listCreator._inputText.text;
+                wordList = _listCreator._inputText.text;
             else
                 wordList = DefaultWordList;
-            
+
             WordList.parsedWordList = wordList.Split(',').ToList();
             WordList.usedWordsList = new List<string>();
         }
 
+       
         public void OnWordSelect(Button button)
         {
-            _playerController = (PlayerController)GameObject.FindObjectsOfType(typeof(PlayerController)).FirstOrDefault(o => ((PlayerController)o).isLocalPlayer);
 
-            // Expose Chosen word and hide buttons
-            _playerController.CmdUpdateCurrentWord(button.GetComponentInChildren<TextMeshProUGUI>().text);
+            currentWord = button.GetComponentInChildren<TextMeshProUGUI>().text;
 
-            foreach (Button hideButton in _wordSelector.buttons)
-            {
-                hideButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
-                hideButton.GetComponentInParent<CanvasGroup>().interactable = false;
-                hideButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
-            }
-            
+            _wordSelector.gameObject.SetActive(false);
+
+            //foreach (Button hideButton in _wordSelector.buttons)
+            //{
+            //    hideButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
+            //    hideButton.GetComponentInParent<CanvasGroup>().interactable = false;
+            //    hideButton.GetComponentInParent<CanvasGroup>().blocksRaycasts = false;
+            //}
+
+            GameMenu.Instance.m_SelectedWordText.text = currentWord;
+
         }
 
         private void GetNextRandomWord(Button button)
@@ -66,10 +78,10 @@ namespace Hackathon
             var rand = new System.Random();
             int index = rand.Next(WordList.parsedWordList.Count);
             button.GetComponentInChildren<TextMeshProUGUI>().text = WordList.parsedWordList[index];
-            
+
             ModifyWordLists(index);
         }
-        
+
         // Remove words from wordlist to avoid reusing, reset wordlist if too few words remain
         private void ModifyWordLists(int index)
         {
@@ -83,5 +95,7 @@ namespace Hackathon
                 WordList.parsedWordList.AddRange(WordList.usedWordsList);
             }
         }
+
+       
     }
 }

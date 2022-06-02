@@ -44,6 +44,7 @@ namespace Hackathon
             transform.position = GetCursorPosition();
             m_DrawCanvas.SetActive(true);
             m_WordSelectorUI.SetActive(false);
+            isDisabled = true;
         }
 
         void Update()
