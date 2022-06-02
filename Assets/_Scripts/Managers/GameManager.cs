@@ -88,11 +88,12 @@ namespace Hackathon
 
             while (roundNumber != MaxRounds)
             {
+                GameMenu.Instance.m_notificationText.text = string.Empty;
+
                 for (int i = 0; i < allPlayers.Count(); i++)
                 {
                     currentPlayer = turnManager.GetNextPlayer(players);
                     SetActivePlayer(currentPlayer);
-                  
 
                     // Wait until word is selected
                     GameMenu.Instance.m_Timer.m_TimeRemaining = 5f;
@@ -100,22 +101,14 @@ namespace Hackathon
                     yield return new WaitForSeconds(5);
                     currentPlayer._isSelectingWord = false;
 
+                    // Draw time
                     GameMenu.Instance.m_Timer.m_TimeRemaining = 5f;
                     GameMenu.Instance.m_Timer.StartTimer();
                     yield return new WaitForSeconds(5);
-
-                    //Debug.Log(GameMenu.Instance.m_Timer.timerIsRunning);
-                    // Wait until timer is over
-                    // while (GameMenu.Instance.m_Timer.timerIsRunning)
-                    // {
-                    //     //play game
-                    //     Debug.Log("Playing game");
-                    // }
                 }
                 roundNumber++;
             }
 
-            SetPlayerState(true);
         }
         IEnumerator EndGame()
         {

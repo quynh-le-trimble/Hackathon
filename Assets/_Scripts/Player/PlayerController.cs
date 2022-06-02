@@ -74,14 +74,16 @@ namespace Hackathon
 
         private void SyncIsActiveDrawer(bool oldVal, bool newVal)
         {
-            if(isLocalPlayer) {
+            if (isLocalPlayer)
+            {
                 isDisabled = !_isActiveDrawer;
             }
         }
 
         private void SyncIsSelectingWord(bool oldVal, bool newVal)
         {
-            if(isLocalPlayer) {
+            if (isLocalPlayer)
+            {
                 m_WordSelectorUI.SetActive(_isSelectingWord);
             }
         }
@@ -118,11 +120,7 @@ namespace Hackathon
             _lineWidth = width;
         }
 
-        [Command]
-        public void CmdUpdateCurrentWord(string word)
-        {
-            _currentWord = word;
-        }
+
 
         private Vector3 GetCursorPosition()
         {

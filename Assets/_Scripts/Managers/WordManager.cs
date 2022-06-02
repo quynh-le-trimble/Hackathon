@@ -60,8 +60,6 @@ namespace Hackathon
 
             currentWord = button.GetComponentInChildren<TextMeshProUGUI>().text;
 
-            _wordSelector.gameObject.SetActive(false);
-
             //foreach (Button hideButton in _wordSelector.buttons)
             //{
             //    hideButton.GetComponentInParent<CanvasGroup>().alpha = 0f;
